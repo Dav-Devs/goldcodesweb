@@ -1,0 +1,96 @@
+.bcontent {
+
+    >.sidebar {
+
+        .category-list {
+            font-family: $font-livvic;
+
+            .list-items {
+                background: $ny-white;
+                padding: .4rem 1rem;
+                margin: .8rem 0;
+                border-radius: 3rem;
+                width: 70%;
+                display: flex;
+                justify-content: space-between;
+
+                a {
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    .sidebar {
+
+        .side-post {
+
+            .bp-content {
+                padding: 1rem 0;
+            }
+
+            h2 {
+                padding-top: 8rem;
+            }
+
+            .bp-info {
+                padding: .4rem .1rem !important;
+                bottom: 0rem !important;
+                left: 1.5rem !important;
+                border-radius: 0rem !important;
+                background: white !important;
+            }
+
+            .bp-title {
+
+                a {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .nws-form {
+            padding-top: 10rem !important;
+
+            .form-element {
+                padding: 0.5rem 2rem !important;
+            }
+
+            .input-element {
+                font-family: $font-nunito !important;
+                font-size: 1rem !important;
+                width: 90% !important;
+                height: 2.9rem !important;
+                padding: 0.3rem 0.5rem !important;
+                border-radius: 1px !important;
+                outline: none !important;
+                border: 2px solid #ccc !important;
+
+                &:focus {
+                    border: 1.5px solid #888 !important;
+                }
+            }
+
+            .form-btn {
+                background: $blue-wonder;
+                border-radius: 1px;
+                padding: 0.8rem 32%;
+                margin: 1rem 0;
+            }
+        }
+
+        .btags {
+            padding: 5rem 0;
+
+            .tags {
+
+                .tag {
+                    background: $blue-wonder;
+                    padding: 0.4rem 1rem;
+                    border-radius: 3rem;
+                    margin: 0.4rem 0.6rem;
+                }
+            }
+        }
+    }
+}

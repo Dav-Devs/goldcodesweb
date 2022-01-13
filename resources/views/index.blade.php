@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+@section('title') Home @endsection
 @section('content')
 <div class="background-image grid grid-cols-1 m-auto" style="background-image: url(./img/obj/pl_bg.jpg);">
     <div class="flex text-gray-100 pt-10">

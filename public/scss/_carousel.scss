@@ -1,0 +1,101 @@
+main {
+    .blog {
+        background: url(../../img/a/a1.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: 65%;
+        height: 100vh;
+        width: 100%;
+
+        .blog-post {
+            // color: $white-1;
+            padding-top: 6rem;
+
+            .blog-content {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                width: 80%;
+                margin: 3rem 2rem;
+                box-shadow: $box-shade;
+                // background: transparentize($color: #ffffff, $amount: 0.3);
+
+                .blog-head {
+                    padding: 2rem 0;
+                }
+
+                h3 {
+                    padding: 0 2rem;
+                }
+
+                .btn-card {
+                    padding: 0.7rem 2rem;
+                    margin: 0.5rem;
+                    background: $nova-grad;
+                    color: #666;
+                }
+
+                .btn-card:hover {
+                    opacity: 0.7;
+                    color: #000000;
+                }
+
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+section {
+
+    .container {
+
+        .owl-nav {
+            position: absolute;
+            top: 0;
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+}
+
+.owl-nav {
+
+    .owl-prev {
+
+        .owl-prev {
+            font-size: 2rem;
+            background: transparent;
+            color: #444;
+        }
+    }
+
+    .owl-next {
+
+        .owl-next {
+            font-size: 2rem;
+            background: transparent;
+            color: #444;
+        }
+    }
+}
+
+.owl-theme {
+
+    .owl-nav {
+
+        [class*='owl-']:hover {
+            background: $white-3;
+            color: $midnight-blue;
+            opacity: 0.75;
+            border-radius: 50px;
+            z-index: 1000;
+        }
+
+        [class*='owl-'] {
+            outline: none;
+        }
+    }
+}

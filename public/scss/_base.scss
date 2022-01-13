@@ -1,0 +1,105 @@
+html,
+body {
+  margin: 0%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Work Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $text-gray;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  font-family: $font-lexend;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-family: $font-lexend;
+}
+
+h3 {
+  font-family: $font-livvic;
+  font-size: 1.3rem;
+}
+
+button.btn {
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  font-family: $font-livvic;
+  cursor: pointer;
+}
+
+span {
+  font-family: $font-nunito;
+}
+
+.container {
+  margin: 0 5vw;
+}
+
+.text-gray {
+  color: $text-gray;
+}
+
+p {
+  font-family: $font-comic;
+  color: $text-light;
+}
+
+hr {
+  margin: 40px !important;
+  height: 3px !important;
+  border-radius: 5px !important;
+  background: $sand-strike;
+}
+
+.f {
+  color: $facebook-blue;
+}
+
+.t {
+  color: $twitter-2;
+}
+
+.y {
+  color: $youtube-red;
+}
+
+.go-to-top {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: $sand-strike;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.go-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  bottom: 30px;
+}
