@@ -1,6 +1,6 @@
 main {
     .site-head {
-        background: $shady-grad, url(/assets/img/o/o10.jpg);
+        background: $slick-carbon;
         background-size: cover;
         height: 110vh;
         display: flex;
@@ -19,13 +19,14 @@ main {
 
         .btn {
             margin: 1.8rem;
-            background: $nova-grad;
+            background: $hova-grad;
+            color: $white-1;
         }
 
         .btn:hover {
             background: transparent;
             border: 1px solid $blu-white;
-            color: $blu-white;
+            color: $white-1;
         }
     }
 }
