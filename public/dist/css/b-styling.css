@@ -291,8 +291,8 @@ main .bcontent .bp-content > .bp-img > div {
   overflow: hidden;
 }
 main .bcontent .bp-content > .bp-img .img {
-  width: 90%;
-  height: 20%;
+  width: 100%;
+  height: 40%;
   transition: all 1s ease;
 }
 main .bcontent .bp-content > .bp-img .img:hover {

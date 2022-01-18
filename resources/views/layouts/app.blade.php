@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Dav Devs') }} - @yield('title')</title>
+    <title>{{ str_replace('_', ' ', config('app.name', 'Gold_Codes_Web')) }} - @yield('title')</title>
 
     <!-- Logo Wave Preloader -->
 
@@ -220,24 +220,52 @@
 
     </style>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#daa520">
+    <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#daa520">
+
+
+    <!-- ==================== Stylesheets ==================== -->
+    <!-- Default stylesheets-->
+
+    {{-- <link rel="stylesheet" href="/assets/frameworks/bootstrap/css/bootstrap-reboot.min.css"> --}}
+
+    <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    @production
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+    @endproduction
+
+    <link rel="stylesheet" href="/assets/font.css">
+
+    <!-- Template specific stylesheets-->
+    <link href="{{ asset('assets/lib/animate.css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/lib/components-font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/lib/et-line-font/et-line-font.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/lib/flexslider/flexslider.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/lib/owl.carousel/dist/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/lib/magnific-popup/dist/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/lib/simple-text-rotator/simpletextrotator.css') }}" rel="stylesheet">
+
+    <!-- Main stylesheet and color file-->
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link id="color-scheme" href="{{ asset('assets/css/colors/default.css') }}" rel="stylesheet">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/frameworks/bootstrap/css/bootstrap-reboot.min.css">
 
     <link rel="stylesheet" href="/assets/material.css">
     <link rel="stylesheet" href="/assets/frameworks/fontawesome/css/all.min.css">
 
-    {{-- <link href="{{ asset(mix('css/app.css')) }}" rel="stylesheet"> --}}
-
-    <link rel="stylesheet" href="/assets/font.css">
-
-    <link href="{{ asset('css/appnav.css') }}" rel="stylesheet">
-    <link href="{{ asset('dist/css/b-styling.min.css') }}" rel="stylesheet">
+    @yield('home_stylesheet')
 </head>
 
-<body class="state-spinner-fixed">
+<body class="state-spinner-fixed" data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
 
     <div class="prel">
         <div class="spinner js-spinner">
@@ -246,49 +274,15 @@
                 <div class="wave-container">
                     <div class="in_wave"></div>
                     <div class="img">
-                        <img src="/assets/img/logos/ddlogo.png" width="100" height="100" alt="DavDevs">
+                        <img src="/assets/img/logos/ddlogo.png" width="100" height="100" alt="Gold Codes Web">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="go-to-top">
-        <i class="fa fa-angle-up"></i>
-    </div>
-
-    <nav class="navbar">
-        <div class="mw">
-            <div class="logo">
-                <a href="{{ url('/') }}">
-                    <img src="/assets/img/logos/ddlogo.png" alt="DavDevs" />
-                    David's Devs
-                </a>
-            </div>
-            <ul class="menu">
-                <li><a href="{{ url('/') }}" class="menu-btn">Home</a></li>
-                <li><a href="{{ url('/blog') }}" class="menu-btn">Blog</a></li>
-                @guest
-                    <li><a href="{{ route('login') }}" class="menu-btn">{{ __('Log In') }}</a></li>
-                    @if (Route::has('register'))
-                        <li><a href="{{ route('register') }}" class="menu-btn btn"
-                                style="border-radius: 5px;">{{ __('Register') }}</a></li>
-                    @endif
-
-                @else
-                    <li><span>{{ Auth::user()->name }}</span></li>
-
-                    <li><a href="{{ route('logout') }}" class="menu-btn" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">{{ __('Logout') }}</a></li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                        {{ csrf_field() }}
-                    </form>
-                @endguest
-            </ul>
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        @include('layouts.nav')
     </nav>
 
     <main>
@@ -299,8 +293,25 @@
         @include('layouts.footer')
     </div>
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <script src="/assets/frameworks/jquery/jquery-3.6.0.min.js"></script>
-    
+
+    {{-- <script src="{{ asset('assets/lib/jquery/dist/jquery.js') }}"></script> --}}
+    <script src="{{ asset('assets/lib/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/lib/wow/dist/wow.js') }}"></script>
+    <script src="{{ asset('assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js') }}"></script>
+    <script src="{{ asset('assets/lib/isotope/dist/isotope.pkgd.js') }}"></script>
+    <script src="{{ asset('assets/lib/imagesloaded/imagesloaded.pkgd.js') }}"></script>
+    <script src="{{ asset('assets/lib/flexslider/jquery.flexslider.js') }}"></script>
+    <script src="{{ asset('assets/lib/owl.carousel/dist/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/lib/smoothscroll.js') }}"></script>
+    <script src="{{ asset('assets/lib/magnific-popup/dist/jquery.magnific-popup.js') }}"></script>
+    <script src="{{ asset('assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+
     <script src="{{ asset('js/jquery.script.js') }}"></script>
 
     <script>

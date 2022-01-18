@@ -55,7 +55,7 @@
                                     </button>
                                 </a>
                             </div>
-                            @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+                            {{-- @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id) --}}
                                 <span class="float-right">
                                     <a href="{{ url('/blog/' . $post->slug . '/edit') }}" title="Edit Post"
                                         class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
@@ -74,7 +74,7 @@
 
                                     </form>
                                 </span>
-                            @endif
+                            {{-- @endif --}}
                         </div>
                         <hr />
                         {{-- <div class="pagination flex-row">
