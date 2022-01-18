@@ -44,16 +44,6 @@
                                     </div>
                                     <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                                 </div>
-                                <div class="post blockquoted-post">
-                                    <div class="post-quote">
-                                        <blockquote class="font-serif">
-                                            <p>&quot; The languages only differ in their grammar, their pronunciation and their
-                                                most common words. Everyone realizes why a new common language would be
-                                                desirable: one could refuse to pay expensive translators. &quot;</p>
-                                            <p class="font-inc font-uppercase">- Thomas Anderson</p>
-                                        </blockquote>
-                                    </div>
-                                </div>
                                 <div class="post video-post">
                                     <div class="post-video embed-responsive embed-responsive-16by9">
                                         <iframe class="embed-responsive-item" src="//www.youtube.com/embed/Jkk0VHiCnKY"
@@ -72,29 +62,6 @@
                                     </div>
                                     <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                                 </div>
-                                <div class="post slideshow-post">
-                                    <div class="post-images-slider">
-                                        <ul class="slides">
-                                            <li><img src="assets/images/post-1.jpg" alt="Blog Slider Image" /></li>
-                                            <li><img src="assets/images/post-3.jpg" alt="Blog Slider Image" /></li>
-                                        </ul>
-                                    </div>
-                                    <div class="post-header font-alt">
-                                        <h2 class="post-title"><a href="#">Post with slideshow</a></h2>
-                                        <div class="post-meta">By&nbsp;<a href="#">Mark Stone</a>| 23 November | 3 Comments
-                                            | <a href="#">Marketing, </a><a href="#">Web Design</a>
-                                        </div>
-                                    </div>
-                                    <div class="post-entry">
-                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet
-                                            mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm
-                                            of existence in this spot, which was created for the bliss of souls like mine.</p>
-                                    </div>
-                                    <div class="post-more"><a class="more-link" href="#">Read more</a></div>
-                                </div>
-                                <div class="pagination font-alt"><a href="#"><i class="fa fa-angle-left"></i></a><a
-                                        class="active" href="#">1</a><a href="#">2</a><a href="#">3</a><a
-                                        href="#">4</a><a href="#"><i class="fa fa-angle-right"></i></a></div>
                             </div>
                             <div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
                                 <div class="widget">
@@ -155,16 +122,24 @@
                                 </div>
                                 <div class="widget">
                                     <h5 class="widget-title font-alt">Tag</h5>
-                                    <div class="tags font-serif"><a href="#" rel="tag">Blog</a><a href="#" rel="tag">Photo</a><a
-                                            href="#" rel="tag">Video</a><a href="#" rel="tag">Image</a><a href="#"
-                                            rel="tag">Minimal</a><a href="#" rel="tag">Post</a><a href="#" rel="tag">Theme</a><a
-                                            href="#" rel="tag">Ideas</a><a href="#" rel="tag">Tags</a><a href="#"
-                                            rel="tag">Bootstrap</a><a href="#" rel="tag">Popular</a><a href="#"
-                                            rel="tag">English</a>
+                                    <div class="tags font-serif">
+                                        <a href="#" rel="tag">Blog</a>
+                                        <a href="#" rel="tag">Photo</a>
+                                        <a href="#" rel="tag">Video</a>
+                                        <a href="#" rel="tag">Image</a>
+                                        <a href="#" rel="tag">Minimal</a>
+                                        <a href="#" rel="tag">Post</a>
+                                        <a href="#" rel="tag">Theme</a>
+                                        <a href="#" rel="tag">Ideas</a>
+                                        <a href="#" rel="tag">Tags</a>
+                                        <a href="#" rel="tag">Bootstrap</a>
+                                        <a href="#" rel="tag">Popular</a>
+                                        <a href="#" rel="tag">English</a>
                                     </div>
                                 </div>
                                 <div class="widget">
-                                    <h5 class="widget-title font-alt">Text</h5>The languages only differ in their grammar, their
+                                    <h5 class="widget-title font-alt">Text</h5>
+                                    The languages only differ in their grammar, their
                                     pronunciation and their most common words. Everyone realizes why a new common language would
                                     be desirable: one could refuse to pay expensive translators.
                                 </div>
