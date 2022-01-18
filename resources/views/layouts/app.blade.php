@@ -1,3 +1,5 @@
+@extends('logo')
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -218,6 +220,29 @@
             }
         }
 
+        nav a {
+            color: #333 !important;
+        }
+
+        nav div > ul.nav li a {
+            font-size: 15px !important;
+        }
+
+        nav div > ul.nav li a:hover {
+            opacity: 0.7;
+        }
+
+        .btn.r {
+            border-color: #333 !important;
+        }
+
+        .navbar-brand img {
+            /* background: #00000030; */
+            display: inline-block !important;
+            vertical-align: text-top !important;
+            /* box-shadow: 0px 5px 5px #0002; */
+        }
+
     </style>
 
     <link rel="manifest" href="/manifest.json">
@@ -229,7 +254,8 @@
     <!-- ==================== Stylesheets ==================== -->
     <!-- Default stylesheets-->
 
-    {{-- <link rel="stylesheet" href="/assets/frameworks/bootstrap/css/bootstrap-reboot.min.css"> --}}
+    <link rel="stylesheet" href="/assets/frameworks/bootstrap/css/bootstrap-reboot.min.css">
+    {{-- <link rel="stylesheet" href="/assets/frameworks/bootstrap/css/bootstrap.min.css"> --}}
 
     <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -268,20 +294,18 @@
 <body class="state-spinner-fixed" data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
 
     <div class="prel">
-        <div class="spinner js-spinner">
-            <div class="spinner__overlay">
-                <div class="spinner__big_circle"></div>
-                <div class="wave-container">
-                    <div class="in_wave"></div>
-                    <div class="img">
-                        <img src="/assets/img/logos/gcwlogo.png" width="100" height="100" alt="Gold Codes Web">
-                    </div>
+        <div class="page-loader">
+            {{-- <div class="loader">Loading...</div> --}}
+            <div class="wave-container">
+                <div class="in_wave"></div>
+                <div class="img">
+                    <img src="@include('logo')" width="100" height="100" alt="Gold Codes Web">
                 </div>
             </div>
         </div>
     </div>
 
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-custom navbar-fixed-top" style="background: #eed490" role="navigation">
         @include('layouts.nav')
     </nav>
 
@@ -294,7 +318,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
     <script src="/assets/frameworks/jquery/jquery-3.6.0.min.js"></script>
 

@@ -21,205 +21,170 @@
     @endif
 
     @isset($posts)
+        @foreach ($posts as $post)
 
-        <!-- Site Blog -->
-
-        <section class="container">
-            <div class="bcontent">
-                <div class="bps">
-
-                    @foreach ($posts as $post)
-
-
-                        {{-- <hr /> --}}
-                        <div class="bp-content">
-                            <div class="bp-img">
-                                <div>
-                                    <img src="/assets/img/o/o10.jpg" class="img" alt="post_image">
-                                    {{-- <img src="{{ asset('images/' . $post->image_path) }}" class="img"
-                                        alt="post_image"> --}}
+            <div class="main">
+                <section class="module">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="post thumbnail-post">
+                                    <div class="post-thumbnail"><a href="#"><img src="assets/images/post-1.jpg"
+                                                alt="Blog-post Thumbnail" /></a></div>
+                                    <div class="post-header font-alt">
+                                        <h2 class="post-title"><a href="#">Our trip to the Alps</a></h2>
+                                        <div class="post-meta">By&nbsp;<a href="#">Mark Stone</a>| 23 November | 3 Comments
+                                            | <a href="#">Photography, </a><a href="#">Web Design</a>
+                                        </div>
+                                    </div>
+                                    <div class="post-entry">
+                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet
+                                            mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm
+                                            of existence in this spot, which was created for the bliss of souls like mine.</p>
+                                    </div>
+                                    <div class="post-more"><a class="more-link" href="#">Read more</a></div>
                                 </div>
-                                <div class="bp-info flex-row">
-                                    <span><i class="fas fa-user text-gray"></i>&nbsp;&nbsp;{{ $post->user->name }}</span>
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;
-                                        {{ date('jS M Y', strtotime($post->updated_at)) }}</span>
-                                    <span>2 Comments</span>
+                                <div class="post blockquoted-post">
+                                    <div class="post-quote">
+                                        <blockquote class="font-serif">
+                                            <p>&quot; The languages only differ in their grammar, their pronunciation and their
+                                                most common words. Everyone realizes why a new common language would be
+                                                desirable: one could refuse to pay expensive translators. &quot;</p>
+                                            <p class="font-inc font-uppercase">- Thomas Anderson</p>
+                                        </blockquote>
+                                    </div>
                                 </div>
+                                <div class="post video-post">
+                                    <div class="post-video embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="//www.youtube.com/embed/Jkk0VHiCnKY"
+                                            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                                    </div>
+                                    <div class="post-header font-alt">
+                                        <h2 class="post-title"><a href="#">Post with video</a></h2>
+                                        <div class="post-meta">By&nbsp;<a href="#">Mark Stone</a>| 23 November | 3 Comments
+                                            | <a href="#">Marketing, </a><a href="#">Web Design</a>
+                                        </div>
+                                    </div>
+                                    <div class="post-entry">
+                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet
+                                            mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm
+                                            of existence in this spot, which was created for the bliss of souls like mine.</p>
+                                    </div>
+                                    <div class="post-more"><a class="more-link" href="#">Read more</a></div>
+                                </div>
+                                <div class="post slideshow-post">
+                                    <div class="post-images-slider">
+                                        <ul class="slides">
+                                            <li><img src="assets/images/post-1.jpg" alt="Blog Slider Image" /></li>
+                                            <li><img src="assets/images/post-3.jpg" alt="Blog Slider Image" /></li>
+                                        </ul>
+                                    </div>
+                                    <div class="post-header font-alt">
+                                        <h2 class="post-title"><a href="#">Post with slideshow</a></h2>
+                                        <div class="post-meta">By&nbsp;<a href="#">Mark Stone</a>| 23 November | 3 Comments
+                                            | <a href="#">Marketing, </a><a href="#">Web Design</a>
+                                        </div>
+                                    </div>
+                                    <div class="post-entry">
+                                        <p>A wonderful serenity has taken possession of my entire soul, like these sweet
+                                            mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm
+                                            of existence in this spot, which was created for the bliss of souls like mine.</p>
+                                    </div>
+                                    <div class="post-more"><a class="more-link" href="#">Read more</a></div>
+                                </div>
+                                <div class="pagination font-alt"><a href="#"><i class="fa fa-angle-left"></i></a><a
+                                        class="active" href="#">1</a><a href="#">2</a><a href="#">3</a><a
+                                        href="#">4</a><a href="#"><i class="fa fa-angle-right"></i></a></div>
                             </div>
-                            <div class="bp-title">
-                                <a href="#">{{ $post->title }}</a>
-                                <p>{{ $post->description }}</p>
-                                <a href="{{ url('/blog/' . $post->slug) }}">
-                                    <button class="btn bp-btn">
-                                        Read More &nbsp; <i class="fas fa-arrow-right"></i>
-                                    </button>
-                                </a>
-                            </div>
-                            {{-- @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id) --}}
-                                <span class="float-right">
-                                    <a href="{{ url('/blog/' . $post->slug . '/edit') }}" title="Edit Post"
-                                        class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
-                                        <i class="material-icons">edit</i>
-                                    </a>
-                                </span>
-
-                                <span class="float-right">
-                                    <form action="{{ url('/blog/' . $post->slug) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-
-                                        <button class="text-red-500 pr-3" type="submit" title="Delete Post">
-                                            <i class="material-icons">delete</i>
-                                        </button>
-
+                            <div class="col-sm-4 col-md-3 col-md-offset-1 sidebar">
+                                <div class="widget">
+                                    <form role="form">
+                                        <div class="search-box">
+                                            <input class="form-control" type="text" placeholder="Search..." />
+                                            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+                                        </div>
                                     </form>
-                                </span>
-                            {{-- @endif --}}
-                        </div>
-                        <hr />
-                        {{-- <div class="pagination flex-row">
-                            <a href="#"><i class="fas fa-chevron-left"></i></a>
-                            <a href="#" class="pages">1</a>
-                            <a href="#" class="pages">2</a>
-                            <a href="#" class="pages">3</a>
-                            <a href="#"><i class="fas fa-chevron-right"></i></a>
-                        </div> --}}
-
-
-                    @endforeach
-
-                </div>
-
-                <aside class="sidebar">
-                    <div class="category">
-                        <h2>Category</h2>
-                        <ul class="category-list">
-                            <li class="list-items">
-                                <a href="#">Software</a>
-                                <span>(05)</span>
-                            </li>
-                            <li class="list-items">
-                                <a href="#">Techonlogy</a>
-                                <span>(02)</span>
-                            </li>
-                            <li class="list-items">
-                                <a href="#">Lifestyle</a>
-                                <span>(07)</span>
-                            </li>
-                            <li class="list-items">
-                                <a href="#">Shopping</a>
-                                <span>(01)</span>
-                            </li>
-                            <li class="list-items">
-                                <a href="#">Food</a>
-                                <span>(08)</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="side-post">
-                        <h2>Popular Post</h2>
-                        <div class="bp-content">
-                            <div class="bp-img">
-                                <div>
-                                    <img src="./assets/popular-post/m-blog-1.jpg" class="img" alt="blog1">
                                 </div>
-                                <div class="bp-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                                    <span>2 Commets</span>
+                                <div class="widget">
+                                    <h5 class="widget-title font-alt">Blog Categories</h5>
+                                    <ul class="icon-list">
+                                        <li><a href="#">Photography - 7</a></li>
+                                        <li><a href="#">Web Design - 3</a></li>
+                                        <li><a href="#">Illustration - 12</a></li>
+                                        <li><a href="#">Marketing - 1</a></li>
+                                        <li><a href="#">Wordpress - 16</a></li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <div class="bp-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
-                            </div>
-                        </div>
-                        <div class="bp-content">
-                            <div class="bp-img">
-                                <div>
-                                    <img src="./assets/popular-post/m-blog-2.jpg" class="img" alt="blog1">
+                                <div class="widget">
+                                    <h5 class="widget-title font-alt">Popular Posts</h5>
+                                    <ul class="widget-posts">
+                                        <li class="clearfix">
+                                            <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-1.jpg"
+                                                        alt="Post Thumbnail" /></a></div>
+                                            <div class="widget-posts-body">
+                                                <div class="widget-posts-title"><a href="#">Designer Desk Essentials</a></div>
+                                                <div class="widget-posts-meta">23 january</div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-2.jpg"
+                                                        alt="Post Thumbnail" /></a></div>
+                                            <div class="widget-posts-body">
+                                                <div class="widget-posts-title"><a href="#">Realistic Business Card Mockup</a>
+                                                </div>
+                                                <div class="widget-posts-meta">15 February</div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-3.jpg"
+                                                        alt="Post Thumbnail" /></a></div>
+                                            <div class="widget-posts-body">
+                                                <div class="widget-posts-title"><a href="#">Eco bag Mockup</a></div>
+                                                <div class="widget-posts-meta">21 February</div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="widget-posts-image"><a href="#"><img src="assets/images/rp-4.jpg"
+                                                        alt="Post Thumbnail" /></a></div>
+                                            <div class="widget-posts-body">
+                                                <div class="widget-posts-title"><a href="#">Bottle Mockup</a></div>
+                                                <div class="widget-posts-meta">2 March</div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="bp-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                                    <span>2 Commets</span>
+                                <div class="widget">
+                                    <h5 class="widget-title font-alt">Tag</h5>
+                                    <div class="tags font-serif"><a href="#" rel="tag">Blog</a><a href="#" rel="tag">Photo</a><a
+                                            href="#" rel="tag">Video</a><a href="#" rel="tag">Image</a><a href="#"
+                                            rel="tag">Minimal</a><a href="#" rel="tag">Post</a><a href="#" rel="tag">Theme</a><a
+                                            href="#" rel="tag">Ideas</a><a href="#" rel="tag">Tags</a><a href="#"
+                                            rel="tag">Bootstrap</a><a href="#" rel="tag">Popular</a><a href="#"
+                                            rel="tag">English</a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="bp-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
-                            </div>
-                        </div>
-                        <div class="bp-content">
-                            <div class="bp-img">
-                                <div>
-                                    <img src="./assets/popular-post/m-blog-3.jpg" class="img" alt="blog1">
+                                <div class="widget">
+                                    <h5 class="widget-title font-alt">Text</h5>The languages only differ in their grammar, their
+                                    pronunciation and their most common words. Everyone realizes why a new common language would
+                                    be desirable: one could refuse to pay expensive translators.
                                 </div>
-                                <div class="bp-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                                    <span>2 Commets</span>
+                                <div class="widget">
+                                    <h5 class="widget-title font-alt">Recent Comments</h5>
+                                    <ul class="icon-list">
+                                        <li>Maria on <a href="#">Designer Desk Essentials</a></li>
+                                        <li>John on <a href="#">Realistic Business Card Mockup</a></li>
+                                        <li>Andy on <a href="#">Eco bag Mockup</a></li>
+                                        <li>Jack on <a href="#">Bottle Mockup</a></li>
+                                        <li>Mark on <a href="#">Our trip to the Alps</a></li>
+                                    </ul>
                                 </div>
-                            </div>
-                            <div class="bp-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
-                            </div>
-                        </div>
-                        <div class="bp-content">
-                            <div class="bp-img">
-                                <div>
-                                    <img src="./assets/popular-post/m-blog-4.jpg" class="img" alt="blog1">
-                                </div>
-                                <div class="bp-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                                    <span>2 Commets</span>
-                                </div>
-                            </div>
-                            <div class="bp-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
-                            </div>
-                        </div>
-                        <div class="bp-content">
-                            <div class="bp-img">
-                                <div>
-                                    <img src="./assets/popular-post/m-blog-5.jpg" class="img" alt="blog1">
-                                </div>
-                                <div class="bp-info flex-row">
-                                    <span><i class="fas fa-calendar-alt text-gray"></i>&nbsp;&nbsp;January 14,
-                                        2019</span>
-                                    <span>2 Commets</span>
-                                </div>
-                            </div>
-                            <div class="bp-title">
-                                <a href="#">New data recording system to better analyse road accidents</a>
                             </div>
                         </div>
                     </div>
-                    <div class="nws-form">
-                        <h2>Newsletter</h2>
-                        <div class="form-element">
-                            <input type="text" class="input-element" placeholder="Email">
-                            <button class="btn form-btn">Subscribe</button>
-                        </div>
-                    </div>
-                    <div class="btags">
-                        <h2>Popular Tags</h2>
-                        <div class="tags flex-row">
-                            <span class="tag">Software</span>
-                            <span class="tag">technology</span>
-                            <span class="tag">travel</span>
-                            <span class="tag">illustration</span>
-                            <span class="tag">design</span>
-                            <span class="tag">lifestyle</span>
-                            <span class="tag">love</span>
-                            <span class="tag">project</span>
-                        </div>
-                    </div>
-                </aside>
-
+                </section>
             </div>
-        </section>
 
-        <!-- End Blog -->
+        @endforeach
 
     @endisset
 
