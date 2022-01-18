@@ -6,7 +6,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Titan</a>
+                <a href="{{ url('/') }}">
+                    <img src="/assets/img/logos/ddlogo.png" alt="Gold Codes Web" />
+                    {{ str_replace('_', ' ', config('app.name', 'Gold_Codes_Web')) }}
+                </a>
             </div>
             <div class="collapse navbar-collapse" id="custom-collapse">
                 <ul class="nav navbar-nav navbar-right">

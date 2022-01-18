@@ -274,7 +274,7 @@
                 <div class="wave-container">
                     <div class="in_wave"></div>
                     <div class="img">
-                        <img src="/assets/img/logos/ddlogo.png" width="100" height="100" alt="Gold Codes Web">
+                        <img src="/assets/img/logos/gcwlogo.png" width="100" height="100" alt="Gold Codes Web">
                     </div>
                 </div>
             </div>
