@@ -1,15 +1,50 @@
-@extends('logo')
+@include('logo')
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <meta name="robots" content="index, follow"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="goldenrod">
+    <meta name="author" content="David Gold">
+
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="GoldCodesWeb">
+    <meta property="og:title" content="Spread positive knowledge wider">
+    <meta property="og:description" content="Spread positive knowledge, resources... and more; in any positive way">
+    <meta property="og:image" content="{{ asset('img/logos/gold_codes_web.png') }}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image" content="{{ asset('img/logos/gold_codes_web.png') }}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="620">
+    <meta property="og:image" content="{{ asset('img/logos/gold_codes_web.png') }}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="620">
+
+    <meta property="twitter:site" content="{{ url('/') }}">
+    {{-- <meta property="twitter:site:id" content="13334762"> --}}
+    <meta property="twitter:creator" content="GoldCodesWeb">
+    {{-- <meta property="twitter:creator:id" content="13334762"> --}}
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="GoldCodesWeb">
+    <meta property="twitter:description" content="Spread positive knowledge, resources... and more; in any positive way">
+    <meta property="twitter:image:src" content="{{ asset('img/logos/gold_codes_web.png') }}">
+    <meta property="twitter:image:width" content="1200">
+    <meta property="twitter:image:height" content="1200">
 
     <title>{{ str_replace('_', ' ', config('app.name', 'Gold_Codes_Web')) }} - @yield('title')</title>
 
@@ -243,6 +278,11 @@
             /* box-shadow: 0px 5px 5px #0002; */
         }
 
+        .navbar-brand {
+            letter-spacing: 0px !important;
+            font-size: 18px !important;
+        }
+
     </style>
 
     <link rel="manifest" href="/manifest.json">
@@ -288,28 +328,27 @@
     <link rel="stylesheet" href="/assets/material.css">
     <link rel="stylesheet" href="/assets/frameworks/fontawesome/css/all.min.css">
 
-    @yield('home_stylesheet')
+    @yield('extra_stylesheet')
 </head>
 
 <body class="state-spinner-fixed" data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
-
-    <div class="prel">
-        <div class="page-loader">
-            {{-- <div class="loader">Loading...</div> --}}
-            <div class="wave-container">
-                <div class="in_wave"></div>
-                <div class="img">
-                    <img src="@include('logo')" width="100" height="100" alt="Gold Codes Web">
-                </div>
-            </div>
-        </div>
-    </div>
 
     <nav class="navbar navbar-custom navbar-fixed-top" style="background: #eed490" role="navigation">
         @include('layouts.nav')
     </nav>
 
     <main>
+    <div class="prel">
+        <div class="page-loader">
+            {{-- <div class="loader">Loading...</div> --}}
+            <div class="wave-container">
+                <div class="in_wave"></div>
+                <div class="img">
+                    <img src="@yield('logo_uri')" width="100" height="100" alt="Gold Codes Web">
+                </div>
+            </div>
+        </div>
+    </div>
         @yield('content')
     </main>
 

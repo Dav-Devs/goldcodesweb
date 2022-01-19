@@ -4,6 +4,6 @@
         Made By
         <a href="mailto:davidgoldcodes@gmail.com">
             David <span class="s_n">Gold</span>
-        </a> | Copyright &copy; <i>{{ date("Y") }}</i> <b>David's Developments</b>
+        </a> | &copy; <i>{{ date("Y") }}</i> &nbsp;"<b>David <i><a href="//github.com/Dav-Devs">Gold Codes Web</a></i></b>"
     </span>
 </footer>

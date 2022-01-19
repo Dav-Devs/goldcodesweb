@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title') Home @endsection
-@section('home_stylesheet') 
+@section('extra_stylesheet') 
 
 <link rel="stylesheet" href="{{ asset('dist/css/b-styling.css') }}">
 

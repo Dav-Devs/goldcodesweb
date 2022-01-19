@@ -61,7 +61,8 @@ body.state-spinner-fixed {
 }
 
 .state-away .spinner__all_circles_box {
-  animation: jumpOut 0.7s 0.8s cubic-bezier(0.47, -0.04, 0.22, 1.05) forwards;
+  -webkit-animation: jumpOut 0.7s 0.8s cubic-bezier(0.47, -0.04, 0.22, 1.05) forwards;
+          animation: jumpOut 0.7s 0.8s cubic-bezier(0.47, -0.04, 0.22, 1.05) forwards;
 }
 
 .spinner__circles_box {
@@ -74,6 +75,15 @@ body.state-spinner-fixed {
   margin: auto;
   height: 100px;
   width: 100px;
+}
+
+@-webkit-keyframes jumpOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
 }
 
 @keyframes jumpOut {
@@ -132,7 +142,6 @@ body.state-spinner-fixed {
 
 * {
   font-family: "Livvic", cursive;
-  -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
 
@@ -458,4 +467,4 @@ main .bp-content .bp-title a {
     width: 80% !important;
   }
 }
-/* End 520px */
+/* End 520px *//*# sourceMappingURL=b-styling.css.map */
