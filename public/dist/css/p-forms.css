@@ -79,16 +79,21 @@ section .title::after {
   height: 80px;
   width: 100%;
 }
-.fm .right form input:not(.fm-btn > input) {
+.fm .right form input:not(.fm-btn > input, #remember) {
+  font-family: "Livvic", cursive;
   height: 100%;
   width: 100%;
-  border: 2px gray;
-  box-shadow: 1px 1px 3px 0px #bdbbbb6e;
   border-radius: 3px;
+  border: none;
   outline: none;
   padding: 0 15px;
-  font-size: 17px;
+  font-size: 15px !important;
   background: #f5f6f7;
+}
+.fm .right form input:not(.fm-btn > input, #remember):focus {
+  border: 1px solid #daa520;
+  background: #fff;
+  box-shadow: 1px 1px 3px 0px #bdbbbb6e;
 }
 .fm .right form .btn {
   height: 47px;
@@ -173,4 +178,5 @@ button.fm-btn {
   .mw {
     padding: 0 23px;
   }
-}/*# sourceMappingURL=p-forms.css.map */
+}
+/*# sourceMappingURL=p-forms.css.map */

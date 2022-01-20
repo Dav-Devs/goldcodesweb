@@ -44,26 +44,26 @@ $(document).ready(function () {
         $(".menu-btn i").toggleClass("active");
     });
 
-    /*   var typed = new Typed(".typing", {
-    string: ["APIs", "JQuery", "PHP", "And More..."],
-    typeSpeed: 100,
-    backSpeed: 60,
-    loop: true,
-  }); */
+    // var typed = new Typed(".typing", {
+    //     string: ["APIs", "JQuery", "PHP", "And More..."],
+    //     typeSpeed: 100,
+    //     backSpeed: 60,
+    //     loop: true,
+    // });
 
     /* OwlCarousel */
-    $(".owl-carousel").owlCarousel({
-        // loop: true,
-        lazyLoad: true,
-        autoplay: true,
-        autoplayTimeOut: 1000,
-        autoplayHoverPause: true,
-        dots: false,
-        nav: true,
-        navText: [$(".owl-nav .owl-prev"), $(".owl-nav .owl-next")],
-        responsiveClass: true,
-        responsive: responsive,
-    });
+    // $(".owl-carousel").owlCarousel({
+    //     // loop: true,
+    //     lazyLoad: true,
+    //     autoplay: true,
+    //     autoplayTimeOut: 1000,
+    //     autoplayHoverPause: true,
+    //     dots: false,
+    //     nav: true,
+    //     navText: [$(".owl-nav .owl-prev"), $(".owl-nav .owl-next")],
+    //     responsiveClass: true,
+    //     responsive: responsive,
+    // });
 
     /* AOS Initialization */
     // AOS.init();

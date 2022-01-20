@@ -46,7 +46,7 @@
     <meta property="twitter:image:width" content="1200">
     <meta property="twitter:image:height" content="1200">
 
-    <title>{{ str_replace('_', ' ', config('app.name', 'Gold_Codes_Web')) }} - @yield('title')</title>
+    <title>{{ str_replace('_', ' ', config('app.name', 'Gold_Codes_Web')) }} &middot; @yield('title')</title>
 
     <!-- Logo Wave Preloader -->
 
@@ -257,6 +257,12 @@
 
         nav a {
             color: #333 !important;
+            text-decoration: none !important;
+        }
+
+        nav ul.dropdown-menu li > a {
+            color: #ccc !important;
+            font-size: 10px !important;
         }
 
         nav div > ul.nav li a {
@@ -283,32 +289,37 @@
             font-size: 18px !important;
         }
 
+        * {
+            outline: none !important;
+        }
+
     </style>
 
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="{{ url('/mix-manifest.json') }}">
     <meta name="msapplication-TileColor" content="#daa520">
-    <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="{{ asset('img/logos/gold_codes_web.png') }}">
     <meta name="theme-color" content="#daa520">
 
 
     <!-- ==================== Stylesheets ==================== -->
     <!-- Default stylesheets-->
 
+    
     <link rel="stylesheet" href="/assets/frameworks/bootstrap/css/bootstrap-reboot.min.css">
     {{-- <link rel="stylesheet" href="/assets/frameworks/bootstrap/css/bootstrap.min.css"> --}}
-
+    
     <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     @production
-
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    
     @endproduction
 
     <link rel="stylesheet" href="/assets/font.css">
-
+    
     <!-- Template specific stylesheets-->
     <link href="{{ asset('assets/lib/animate.css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/lib/components-font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
@@ -322,21 +333,23 @@
     <!-- Main stylesheet and color file-->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <link id="color-scheme" href="{{ asset('assets/css/colors/default.css') }}" rel="stylesheet">
-
+    
     <!-- Styles -->
-
+    
     <link rel="stylesheet" href="/assets/material.css">
     <link rel="stylesheet" href="/assets/frameworks/fontawesome/css/all.min.css">
-
+    
     @yield('extra_stylesheet')
+
+    <link rel="stylesheet" href="{{ asset('dist/css/bs-custom.css') }}">
 </head>
 
 <body class="state-spinner-fixed" data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
-
+    
     <nav class="navbar navbar-custom navbar-fixed-top" style="background: #eed490" role="navigation">
         @include('layouts.nav')
     </nav>
-
+    
     <main>
     <div class="prel">
         <div class="page-loader">
@@ -376,6 +389,7 @@
     <script src="{{ asset('assets/js/main.js') }}"></script>
 
     <script src="{{ asset('js/jquery.script.js') }}"></script>
+    <script src="{{ asset('js/bs.script.js') }}"></script>
 
     <script>
         $(window).on("load", function() {

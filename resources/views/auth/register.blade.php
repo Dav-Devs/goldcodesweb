@@ -19,7 +19,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="field name">
-                            <input type="text" name="name" id="name" class="@error('name') has-error @enderror"
+                            <input type="text" name="name" class="form-control" style="text-transform: none; letter-spacing: 1px;" id="name" class="@error('name') has-error @enderror"
                                 value="{{ old('name') }}" placeholder="Name..." required autocomplete="name" autofocus>
                             @error('name')
                                 <p class="text-red-500 text-xs italic mt-4">
@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="field email">
-                            <input type="email" name="email" id="email" class="@error('name') has-error @enderror"
+                            <input type="email" name="email" class="form-control" style="text-transform: none; letter-spacing: 1px;" id="email" class="@error('name') has-error @enderror"
                                 value="{{ old('name') }}" placeholder="Email..." required autocomplete="email" autofocus>
                             @error('email')
                                 <p class="text-red-500 text-xs italic mt-4">
@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="field name">
-                            <input type="password" name="password" id="password" class="@error('name') has-error @enderror"
+                            <input type="password" name="password" class="form-control" style="text-transform: none; letter-spacing: 1px;" id="password" class="@error('name') has-error @enderror"
                                 value="{{ old('name') }}" placeholder="Password..." required autocomplete="new-password"
                                 autofocus>
                             @error('password')
@@ -50,7 +50,7 @@
                         </div>
 
                         <div class="field name">
-                            <input type="password" name="password_confirmation" id="password-confirm"
+                            <input type="password" name="password_confirmation" class="form-control" style="text-transform: none; letter-spacing: 1px;" id="password-confirm"
                                 placeholder="Confirm Password..." required autocomplete="new-password" autofocus>
                         </div>
 
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="luck-y-btn">
-                            <a href="{{ route('login') }}"><button class="fm-btn" type="submit">Create New Account</button></a>
+                            <a href="{{ route('login') }}"><button class="fm-btn" type="submit">Log In &raquo;</button></a>
                         </div>
                     </div>
 

@@ -17,26 +17,35 @@
                     <li><a href="{{ url('/') }}" class="btn btn-link btn-sm navbar-btn">Home</a></li>
                     <li><a href="{{ url('/blog') }}" class="btn btn-link btn-sm navbar-btn">Blog</a></li>
                     @guest
-                        <li><a href="{{ route('login') }}" class="btn btn-link btn-sm navbar-btn">{{ __('Log In') }}</a></li>
+                        <li><a href="{{ route('login') }}" class="btn btn-link btn-sm navbar-btn">{{ __('Log In') }}</a>
+                        </li>
                         @if (Route::has('register'))
-                            <li><a href="{{ route('register') }}" class="btn btn-default r btn-sm navbar-btn" style="border-radius: 3px; align-items: center; background: #0000">
-                                        {{ __('Register') }} <span>&raquo;</span>
+                            <li><a href="{{ route('register') }}" class="btn btn-default r btn-sm navbar-btn"
+                                    style="border-radius: 3px; align-items: center; background: #0000">
+                                    {{ __('Register') }} <span>&raquo;</span>
                                 </a>
                             </li>
                         @endif
 
                     @else
-                        <li><span>{{ Auth::user()->name }}</span></li>
-
-                        <li>
-                            <a href="{{ route('logout') }}"
-                                onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" style="font-size: 15px !important; letter-spacing: 0.5px !important;" href="javascript:void(0);"
+                                data-toggle="dropdown">{{ Auth::user()->name }}</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url('/' . str_replace(' ', '-', Auth::user()->name)) }}" 
+                                    style="font-size: 10px !important;">{{ __('Profile') }}</a></li>
+                                <li>
+                                    <a href="{{ route('logout') }}" style="font-size: 10px !important;"
+                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                        {{ __('Log out') }}
+                                    </a>
+                                </li>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="hidden">
+                                    {{ csrf_field() }}
+                                </form>
+                            </ul>
                         </li>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                            {{ csrf_field() }}
-                        </form>
                     @endguest
 
                 </ul>
