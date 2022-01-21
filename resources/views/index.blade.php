@@ -17,7 +17,7 @@
             <div class="site-bg">
                 <h3>David's Developments</h3>
                 <h1>Welcome to my blog</h1>
-                <a href="{{ url('/blog') }}"><button class="btn">Explore</button></a>
+                <a href="{{ url('/blog/') }}"><button class="btn">Explore</button></a>
             </div>
 
         </section>
