@@ -3,9 +3,11 @@
 @section('title') Register @endsection
 
 @section('extra_stylesheet')
-
     <link rel="stylesheet" href="{{ asset('dist/css/p-forms.css') }}">
+@endsection
 
+@section('extra_script') 
+<script src="{{ asset('js/a.js') }}"></script>
 @endsection
 
 @section('content')
@@ -18,40 +20,50 @@
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <div class="field name">
-                            <input type="text" name="name" class="form-control" style="text-transform: none; letter-spacing: 1px;" id="name" class="@error('name') has-error @enderror"
-                                value="{{ old('name') }}" placeholder="Name..." required autocomplete="name" autofocus>
+                        <div class="field name form-floating f_input position-relative">
+                            <input type="text" name="name" class="form-control"
+                                style="text-transform: none; letter-spacing: 1px;" id="name"
+                                class="@error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Name..."
+                                required autocomplete="name" autofocus>
+                            <label for="name">Name... </label>
                             @error('name')
-                                <p class="text-red-500 text-xs italic mt-4">
+                                <div class="invalid-feedback">
                                     {{ $message }}
-                                </p>
+                                </div>
                             @enderror
                         </div>
 
-                        <div class="field email">
-                            <input type="email" name="email" class="form-control" style="text-transform: none; letter-spacing: 1px;" id="email" class="@error('name') has-error @enderror"
-                                value="{{ old('name') }}" placeholder="Email..." required autocomplete="email" autofocus>
+                        <div class="field email form-floating f_input position-relative">
+                            <input type="email" name="email" class="form-control"
+                                style="text-transform: none; letter-spacing: 1px;" id="email"
+                                class="@error('email') is-invalid @enderror" value="{{ old('email') }}"
+                                placeholder="Email..." required autocomplete="email" autofocus>
+                            <label for="email">Email address... </label>
                             @error('email')
-                                <p class="text-red-500 text-xs italic mt-4">
+                                <div class="invalid-feedback">
                                     {{ $message }}
-                                </p>
+                                </div>
                             @enderror
                         </div>
 
-                        <div class="field name">
-                            <input type="password" name="password" class="form-control" style="text-transform: none; letter-spacing: 1px;" id="password" class="@error('name') has-error @enderror"
-                                value="{{ old('name') }}" placeholder="Password..." required autocomplete="new-password"
-                                autofocus>
+                        <div class="field name form-floating f_input position-relative">
+                            <input type="password" name="password" class="form-control"
+                                style="text-transform: none; letter-spacing: 1px;" id="password"
+                                class="@error('password') is-invalid @enderror" placeholder="Password..." required autocomplete="new-password" autofocus>
+                            <label for="password">Password... </label>
+
                             @error('password')
-                                <p class="text-red-500 text-xs italic mt-4">
+                                <div class="invalid-feedback">
                                     {{ $message }}
-                                </p>
+                                </div>
                             @enderror
                         </div>
 
-                        <div class="field name">
-                            <input type="password" name="password_confirmation" class="form-control" style="text-transform: none; letter-spacing: 1px;" id="password-confirm"
+                        <div class="field name form-floating f_input position-relative">
+                            <input type="password" name="password_confirmation" class="form-control"
+                                style="text-transform: none; letter-spacing: 1px;" id="password-confirm"
                                 placeholder="Confirm Password..." required autocomplete="new-password" autofocus>
+                            <label for="password-confirm">Confirm Password...</label>
                         </div>
 
                         <div class="fm-btn field">
@@ -63,12 +75,13 @@
                         {{-- <a href="#">Forgotten password?</a><br> --}}
                         <div class="wrap-line">
                             <div class="line-o-line"></div>
-                            <p>OR</p>
+                            <p>or</p>
                             <div class="line-o-line"></div>
                         </div>
 
                         <div class="luck-y-btn">
-                            <a href="{{ route('login') }}"><button class="fm-btn" type="submit">Log In &raquo;</button></a>
+                            <a href="{{ route('login') }}"><button class="fm-btn" type="submit">Log In
+                                    &raquo;</button></a>
                         </div>
                     </div>
 

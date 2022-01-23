@@ -1,0 +1,126 @@
+.fm {
+
+    .fm-container {
+
+        .col {
+            width: 100%;
+        }
+    }
+
+    .right {
+
+        form {
+
+            .fields {
+                display: flex;
+            }
+
+            // .field {
+            //     height: 45px;
+            //     width: 100%;
+            //     margin-bottom: 8px;
+            // }
+
+            .msg {
+                height: 80px;
+                width: 100%;
+            }
+
+            input:not(.fm-btn > input, #remember) {
+                font-family: 'Livvic', cursive;
+                height: 100%;
+                width: 100%;
+                border-radius: 3px;
+                border: none;
+                outline: none;
+                // padding: 0 15px;
+                font-size: 15px !important;
+                background: #f5f6f7;
+
+                &:focus {
+                    border: 1px solid #daa520;
+                    background: #fff;
+                    box-shadow: 1px 1px 3px 0px #bdbbbb6e;
+                }
+            }
+
+            .btn {
+                height: 47px;
+                width: 170px;
+            }
+
+            .fm-btn {
+
+                input {
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    background: #e4ba4e;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 600;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+
+        .fm-btn {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.fmtitle {
+    color: #856514;
+}
+
+.extra {
+    align-content: center;
+    text-align: center;
+    align-items: center;
+
+    a {
+        color: #0b91ff;
+    }
+}
+
+.luck-y-btn {
+    margin-top: 8px;
+}
+
+button.fm-btn {
+    width: 250px;
+    height: 50px;
+    border: none;
+    background: #c8981e;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.wrap-line {
+    display: flex;
+    /* margin-top: 10px; */
+}
+
+.line-o-line {
+    position: relative !important;
+    border-bottom: 1px solid gray !important;
+    width: 50% !important;
+    margin-bottom: 7px !important;
+    bottom: 5px !important;
+}
+
+.wrap-line {
+
+    p {
+        margin: 0 10px !important;
+        margin-top: 20px !important;
+    }
+}

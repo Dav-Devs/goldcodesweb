@@ -8,6 +8,10 @@
 
 @endsection
 
+@section('extra_script') 
+<script src="{{ asset('js/a.js') }}"></script>
+@endsection
+
 @section('content')
 
     <section class="fm">
@@ -19,28 +23,26 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="field email position-relative">
-                            <input type="email" name="email" class="form-control @error('name') is-invalid @enderror"
-                                style="text-transform: none; letter-spacing: 1px;" id="email"
-                                class="" value="{{ old('name') }}"
-                                placeholder="Email..." required autocomplete="email" autofocus>
-                            @error('email')
-                                <div class="invalid-tooltip">
+                        <div class="field email form-floating f_input">
+                            <input type="email" name="email" class="form-control @error('name') is-invalid @enderror" style="text-transform: none; letter-spacing: 1px;" id="email" value="{{ old('email') }}" placeholder="Email..." required autocomplete="email" autofocus>
+                            
+                                @error('email')
+                                <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
+                            <label for="email">Email address... </label>
                         </div>
 
-                        <div class="field name position-relative">
-                            <input type="password" name="password" class="form-control @error('name') is-invalid @enderror"
-                                style="text-transform: none; letter-spacing: 1px;" id="password"
-                                class="" value="{{ old('name') }}"
-                                placeholder="Password..." required autofocus>
-                            @error('password')
-                                <div class="invalid-tooltip">
+                        <div class="field name form-floating f_input">
+                            <input type="password" name="password" class="form-control @error('name') is-invalid @enderror" style="text-transform: none; letter-spacing: 1px;" id="password" placeholder="Password..." required autofocus>
+                            
+                                @error('password')
+                                <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
+                            <label for="password">Password... </label>
                         </div>
 
                         <div class="field name form-check">

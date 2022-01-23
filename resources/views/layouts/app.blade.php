@@ -1,5 +1,5 @@
 @include('logo')
-@include('modals')
+{{-- @include('modals') --}}
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -50,13 +50,33 @@
 
         <title>{{ str_replace('_', ' ', config('app.name', 'Gold_Codes_Web')) }} &middot; @yield('title')</title>
 
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/images/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/images/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/images/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/images/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/images/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+
         <!-- Logo Wave Preloader -->
 
         <style>
+
             * {
-                font-family: "Livvic", cursive;
-                -webkit-transition: all 1s ease-in-out;
-                transition: all 1s ease-in-out
+                font-family: "Livvic";
+                outline: none !important;
+                -webkit-transition: all 0.10s ease-in-out !important;
+                transition: all 0.10s ease-in-out !important;
+            }
+
+            ::selection {
+                background: #daa520 !important;
             }
 
             .loon-crest {
@@ -184,7 +204,7 @@
                     -webkit-box-shadow: 0 5px 60px 15px rgba(235, 220, 7, 0.2) inset;
                     box-shadow: 0 5px 60px 15px rgba(235, 220, 7, 0.2) inset
                 }
-
+                
                 100% {
                     width: 200px;
                     height: 200px;
@@ -192,20 +212,20 @@
                     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) inset
                 }
             }
-
+            
             @-webkit-keyframes fade-in-out {
                 0% {
                     -webkit-filter: brightness(0.2);
                     filter: brightness(0.2);
                     opacity: 0.2
                 }
-
+                
                 25% {
                     -webkit-filter: brightness(0.25);
                     filter: brightness(0.25);
                     opacity: 0.25
                 }
-
+                
                 50% {
                     -webkit-filter: brightness(0.5);
                     filter: brightness(0.5);
@@ -291,15 +311,15 @@
                 font-size: 18px !important;
             }
 
-            * {
-                outline: none !important;
+            .fm-container .f_input {
+                height: 56px !important;
             }
 
         </style>
 
         <link rel="manifest" href="{{ url('/mix-manifest.json') }}">
         <meta name="msapplication-TileColor" content="#daa520">
-        <meta name="msapplication-TileImage" content="{{ asset('img/logos/gold_codes_web.png') }}">
+        <meta name="msapplication-TileImage" content="assets/images/favicons/ms-icon-144x144.png">
         <meta name="theme-color" content="#daa520">
 
 
@@ -309,7 +329,7 @@
 
         <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css') }}">
 
-        <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ asset('assets/lib/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
 
         @production
 
@@ -451,10 +471,9 @@
         {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 
         <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
-
+        
         {{-- <script src="{{ asset('assets/lib/jquery/dist/jquery.js') }}"></script> --}}
-        <script src="{{ asset('assets/lib/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        {{-- <script src="{{ asset('assets/lib/bootstrap/dist/js/bootstrap.min.js') }}"></script> --}}
         <script src="{{ asset('assets/lib/wow/dist/wow.js') }}"></script>
         <script src="{{ asset('assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js') }}"></script>
         <script src="{{ asset('assets/lib/isotope/dist/isotope.pkgd.js') }}"></script>
@@ -466,9 +485,11 @@
         <script src="{{ asset('assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js') }}"></script>
         <script src="{{ asset('assets/js/plugins.js') }}"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>
-
+        
+        <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
         <script src="{{ asset('js/jquery.script.js') }}"></script>
-        <script src="{{ asset('js/bs.script.js') }}"></script>
+        @yield('extra_script')
+        {{-- <script src="{{ asset('js/bs.script.js') }}"></script> --}}
 
         {{-- <script>
             $(window).on("load", function () {

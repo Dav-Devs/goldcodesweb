@@ -29,14 +29,17 @@
 
                     @else
                         <li class="dropdown" style="text-transform: none !important;">
-                            <a class="dropdown-toggle" style="font-size: 15px !important; letter-spacing: 0.5px !important;" href="javascript:void(0);"
-                                data-toggle="dropdown">{{ Auth::user()->name }}</a>
+                            <a class="dropdown-toggle" style="font-size: 15px !important; letter-spacing: 0.5px !important;"
+                                href="javascript:void(0);" data-toggle="dropdown">{{ Auth::user()->name }}</a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ url('/' . str_replace(' ', '-', Auth::user()->name)) }}" 
-                                    style="font-size: 10px !important;">{{ __('Profile') }}</a></li>
+                                <li><a href="{{ url('/' . str_replace(' ', '-', Auth::user()->name)) }}"
+                                        style="font-size: 13px !important;">
+                                        {{ __('Profile') }}
+                                    </a>
+                                </li>
                                 <li>
-                                    <a href="{{ route('logout') }}" style="font-size: 10px !important;"
-                                    data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    <a href="{{ route('logout') }}" style="font-size: 13px !important;"
+                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                                         {{ __('Log out') }}
                                     </a>
                                 </li>
