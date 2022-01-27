@@ -20,10 +20,9 @@
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-                        <div class="field name form-floating f_input position-relative">
-                            <input type="text" name="name" class="form-control"
-                                style="text-transform: none; letter-spacing: 1px;" id="name"
-                                class="@error('name') is-invalid @enderror" value="{{ old('name') }}" placeholder="Name..."
+                        <div class="field name form-floating f_input">
+                            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                                style="text-transform: none; letter-spacing: 1px;" id="name" value="{{ old('name') }}" placeholder="Name..."
                                 required autocomplete="name" autofocus>
                             <label for="name">Name... </label>
                             @error('name')
@@ -33,10 +32,9 @@
                             @enderror
                         </div>
 
-                        <div class="field email form-floating f_input position-relative">
-                            <input type="email" name="email" class="form-control"
-                                style="text-transform: none; letter-spacing: 1px;" id="email"
-                                class="@error('email') is-invalid @enderror" value="{{ old('email') }}"
+                        <div class="field email form-floating f_input">
+                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                                style="text-transform: none; letter-spacing: 1px;" id="email" value="{{ old('email') }}"
                                 placeholder="Email..." required autocomplete="email" autofocus>
                             <label for="email">Email address... </label>
                             @error('email')
@@ -46,10 +44,9 @@
                             @enderror
                         </div>
 
-                        <div class="field name form-floating f_input position-relative">
-                            <input type="password" name="password" class="form-control"
-                                style="text-transform: none; letter-spacing: 1px;" id="password"
-                                class="@error('password') is-invalid @enderror" placeholder="Password..." required autocomplete="new-password" autofocus>
+                        <div class="field name form-floating f_input">
+                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
+                                style="text-transform: none; letter-spacing: 1px;" id="password" placeholder="Password..." required autocomplete="new-password" autofocus>
                             <label for="password">Password... </label>
 
                             @error('password')
@@ -59,7 +56,7 @@
                             @enderror
                         </div>
 
-                        <div class="field name form-floating f_input position-relative">
+                        <div class="field name form-floating f_input">
                             <input type="password" name="password_confirmation" class="form-control"
                                 style="text-transform: none; letter-spacing: 1px;" id="password-confirm"
                                 placeholder="Confirm Password..." required autocomplete="new-password" autofocus>

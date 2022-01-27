@@ -7,7 +7,8 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{ url('/') }}" style="">
-                    <img src="{{ asset('img/logos/gcwlogo.png') }}" width="30" height="24" alt="G C W" />
+                    {{-- <img src="{{ asset('img/logos/gcwlogo.png') }}" width="30" height="24" alt="G C W" /> --}}
+                    @yield('logo_svg')
                     {{ str_replace('_', ' ', config('app.name', 'Gold_Codes_Web')) }}
                 </a>
             </div>
