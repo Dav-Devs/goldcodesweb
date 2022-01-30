@@ -38,7 +38,31 @@
                                         </a>
                                     </div>
                                     <div class="post-header font-alt">
-                                        <h2 class="post-title"><a href="#">{{ $post->title }}</a></h2>
+                                        <h2 class="post-title d-flex">
+                                            <a href="#">{{ $post->title }}</a>
+
+                            {{-- @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id) --}}
+                                <span>
+                                    <a href="{{ url('/blog/' . $post->slug . '/edit') }}" title="Edit Post"
+                                        class="btn btn-xs btn-link text-secondary">
+                                        <i class="material-icons">edit</i>
+                                    </a>
+                                </span>
+
+                                <span>
+                                    <form action="{{ url('/blog/' . $post->slug) }}" method="POST">
+                                        @csrf
+                                        @method('delete')
+
+                                        <button class="btn btn-xs btn-link text-danger" type="submit" title="Delete Post">
+                                            <i class="material-icons">delete</i>
+                                        </button>
+
+                                    </form>
+                                </span>
+                            {{-- @endif --}}
+
+                                        </h2>
                                         <div class="post-meta">
                                             By &nbsp; <a href="#">{{ $post->user->name }}</a> &nbsp; | 
                                             {{ date('jS M Y', strtotime($post->updated_at)) }} | 3 Comments | 
@@ -51,7 +75,7 @@
                                     </div>
                                     <div class="post-more"><a class="more-link" href="{{ url('/blog/' . $post->slug) }}">Read more</a></div>
                                     
-                            {{-- @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id) --}}
+                            @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                                 <span class="float-right">
                                     <a href="{{ url('/blog/' . $post->slug . '/edit') }}" title="Edit Post"
                                         class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
@@ -70,7 +94,7 @@
 
                                     </form>
                                 </span>
-                            {{-- @endif --}}
+                            @endif
                                 </div>
                             </div>
 

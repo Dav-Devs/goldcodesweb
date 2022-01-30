@@ -1,0 +1,1 @@
+[29-Jan-2022 14:53:32 Africa/Brazzaville] PHP Parse error:  syntax error, unexpected '"display"' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in /var/www/html/dd/public/mkmanifest/index.php on line 42

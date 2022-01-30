@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\RedirectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,4 @@ Auth::routes();
 
 Route::get('/home', [PagesController::class, 'index'])->name('home');
 
+Route::get('/rdr', [RedirectController::class, 'index']);

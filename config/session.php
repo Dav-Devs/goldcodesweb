@@ -31,7 +31,7 @@ return [
     |
     */
 
-    'lifetime' => env('SESSION_LIFETIME', 120),
+    'lifetime' => env('SESSION_LIFETIME', 1200),
 
     'expire_on_close' => false,
 
@@ -128,7 +128,7 @@ return [
 
     'cookie' => env(
         'SESSION_COOKIE',
-        Str::slug(env('APP_NAME', 'gcw'), '_').'_session'
+        Str::slug(env('__'.'APP_NAME'.'__', '_gcw'), '_')
     ),
 
     /*

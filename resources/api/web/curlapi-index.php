@@ -21,4 +21,11 @@ $data = curl_exec($ch);
 echo "<pre>";
 echo $data;
 
+function show($preview)
+{
+    echo "<pre>";
+    print_r($preview);
+    echo "</pre>";
+}
+
 show($_SERVER);
