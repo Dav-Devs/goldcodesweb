@@ -1,7 +1,7 @@
 <p align="left">
     <a href="https://goldcodesweb.herokuapp.com/" target="_blank">
         <img src="https://goldcodesweb.herokuapp.com/favicons/svg/GCW-48x48.svg" 
-             width="400" alt="Gold Codes Web" />
+             width="100" alt="Gold Codes Web" />
     </a>
 </p>
 
