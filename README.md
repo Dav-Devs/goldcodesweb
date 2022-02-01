@@ -5,7 +5,7 @@
         <h3 align="center">GoldCodesWeb</h3>
     </a>
 </p>
-<p align="center">Is proudly made with&hellip; </p>
+<p align="center">Is proudly built with&hellip; </p>
 
 <p align="center">
     <a href="https://laravel.com" target="_blank">
