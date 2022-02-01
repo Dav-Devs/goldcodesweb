@@ -17,7 +17,7 @@ return [
     | Supported: "gd", "imagick"
     |
     */
-    'driver' => env('IMAGE_DRIVER', 'imagick'),
+    'driver' => env('IMAGE_DRIVER', 'gd'),
 
     // Initial generator class
     'generator' => \Laravolt\Avatar\Generator\DefaultGenerator::class,
@@ -35,7 +35,7 @@ return [
     'height' => 100,
 
     // Number of characters used as initials. If name consists of single word, the first N character will be used
-    'chars' => 2,
+    'chars' => 1,
 
     // font size
     'fontSize' => 48,

@@ -1,71 +1,64 @@
 @extends('layouts.app')
 
+@section('title') {{ __('Reset Password') }} @endsection
+
+@section('extra_stylesheet')
+
+    <link rel="stylesheet" href="{{ asset('dist/css/p-forms.css') }}">
+
+@endsection
+
+@section('extra_script') 
+<script src="{{ asset('js/a.js') }}"></script>
+@endsection
+
 @section('content')
-<main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
-    <div class="flex">
-        <div class="w-full">
-            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
 
-                <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                    {{ __('Reset Password') }}
-                </header>
+    <section class="fm">
+        <div class="mw">
+            <h2 class="fmtitle">{{ __('Set New Password') }}</h2>
+            <div class="fm-container">
+                <div class="col right">
 
-                <form class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8" method="POST" action="{{ route('password.update') }}">
-                    @csrf
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
 
-                    <input type="hidden" name="token" value="{{ $token }}">
+                            @error('email')
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                            
+                            @error('password')
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
 
-                    <div class="flex flex-wrap">
-                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
-                            {{ __('E-Mail Address') }}:
-                        </label>
+                        <input type="hidden" name="token" value="{{ $token }}">
 
-                        <input id="email" type="email"
-                            class="form-input w-full @error('email') border-red-500 @enderror" name="email"
-                            value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+                        <div class="field name form-floating f_input">
+                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
+                                style="text-transform: none; letter-spacing: 1px;" id="password" placeholder="New Password..." required autocomplete="new-password" autofocus>
+                            <label for="password">New Password... </label>
 
-                        @error('email')
-                        <p class="text-red-500 text-xs italic mt-4">
-                            {{ $message }}
-                        </p>
-                        @enderror
-                    </div>
+                        </div>
 
-                    <div class="flex flex-wrap">
-                        <label for="password" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
-                            {{ __('Password') }}:
-                        </label>
+                        <div class="field name form-floating f_input">
+                            <input type="password" name="password_confirmation" class="form-control"
+                                style="text-transform: none; letter-spacing: 1px;" id="password-confirm"
+                                placeholder="Confirm New Password..." required autocomplete="new-password" autofocus>
+                            <label for="password-confirm">Confirm New Password...</label>
+                        </div>
 
-                        <input id="password" type="password"
-                            class="form-input w-full @error('password') border-red-500 @enderror" name="password"
-                            required autocomplete="new-password">
+                        <div class="fm-btn field">
+                            <input type="submit" value="{{ __('Reset Password') }}">
+                        </div>
+                    </form>
 
-                        @error('password')
-                        <p class="text-red-500 text-xs italic mt-4">
-                            {{ $message }}
-                        </p>
-                        @enderror
-                    </div>
-
-                    <div class="flex flex-wrap">
-                        <label for="password-confirm" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
-                            {{ __('Confirm Password') }}:
-                        </label>
-
-                        <input id="password-confirm" type="password" class="form-input w-full"
-                            name="password_confirmation" required autocomplete="new-password">
-                    </div>
-
-                    <div class="flex flex-wrap pb-8 sm:pb-10">
-                        <button type="submit"
-                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:py-4">
-                            {{ __('Reset Password') }}
-                        </button>
-                    </div>
-                </form>
-
-            </section>
+                </div>
+            </div>
         </div>
-    </div>
-</main>
+    </section>
+
 @endsection

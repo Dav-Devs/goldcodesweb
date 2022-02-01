@@ -20,16 +20,30 @@
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
+
+                            @error('name')
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
+                            @error('email')
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                            
+                            @error('password')
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
                         <div class="field name form-floating f_input">
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
                                 style="text-transform: none; letter-spacing: 1px;" id="name" value="{{ old('name') }}" placeholder="Name..."
                                 required autocomplete="name" autofocus>
                             <label for="name">Name... </label>
-                            @error('name')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
                         </div>
 
                         <div class="field email form-floating f_input">
@@ -37,11 +51,6 @@
                                 style="text-transform: none; letter-spacing: 1px;" id="email" value="{{ old('email') }}"
                                 placeholder="Email..." required autocomplete="email" autofocus>
                             <label for="email">Email address... </label>
-                            @error('email')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
                         </div>
 
                         <div class="field name form-floating f_input">
@@ -49,11 +58,6 @@
                                 style="text-transform: none; letter-spacing: 1px;" id="password" placeholder="Password..." required autocomplete="new-password" autofocus>
                             <label for="password">Password... </label>
 
-                            @error('password')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
                         </div>
 
                         <div class="field name form-floating f_input">

@@ -1,56 +1,75 @@
 @extends('layouts.app')
 
+@section('title') {{ __('Reset Password') }} @endsection
+
+@section('extra_stylesheet')
+
+    <link rel="stylesheet" href="{{ asset('dist/css/p-forms.css') }}">
+
+@endsection
+
+@section('extra_script')
+    <script src="{{ asset('js/a.js') }}"></script>
+@endsection
+
 @section('content')
-<main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
-    <div class="flex">
-        <div class="w-full">
 
-            @if (session('status'))
-            <div class="text-sm text-green-700 bg-green-100 px-5 py-6 sm:rounded sm:border sm:border-green-400 sm:mb-6"
-                role="alert">
-                {{ session('status') }}
-            </div>
-            @endif
+    <section class="fm">
+        <div class="mw">
+            <h2 class="fmtitle">{{ __('Reset Password') }}</h2>
+            <div class="fm-container">
+                <div class="col right">
 
-            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
-                <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
-                    {{ __('Reset Password') }}
-                </header>
+                    @if (session('status'))
+                        <div class="alert alert-info" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-                <form class="w-full px-6 space-y-6 sm:px-10 sm:space-y-8" method="POST" action="{{ route('password.email') }}">
-                    @csrf
-
-                    <div class="flex flex-wrap">
-                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
-                            {{ __('E-Mail Address') }}:
-                        </label>
-
-                        <input id="email" type="email"
-                            class="form-input w-full @error('email') border-red-500 @enderror" name="email"
-                            value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <form method="POST" action="{{ route('password.email') }}">
+                        @csrf
 
                         @error('email')
-                        <p class="text-red-500 text-xs italic mt-4">
-                            {{ $message }}
-                        </p>
+                            <div class="alert alert-danger" role="alert">
+                                {{ $message }}
+                            </div>
                         @enderror
-                    </div>
 
-                    <div class="flex flex-wrap justify-center items-center space-y-6 pb-6 sm:pb-10 sm:space-y-0 sm:justify-between">
-                        <button type="submit"
-                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:w-auto sm:px-4 sm:order-1">
-                            {{ __('Send Password Reset Link') }}
-                        </button>
+                        <div class="field email form-floating f_input">
+                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                                style="text-transform: none; letter-spacing: 1px;" id="email" value="{{ old('email') }}"
+                                placeholder="Email..." required autocomplete="email" autofocus>
 
-                        <p class="mt-4 text-xs text-blue-500 hover:text-blue-700 whitespace-no-wrap no-underline hover:underline sm:text-sm sm:order-0 sm:m-0">
-                            <a class="text-blue-500 hover:text-blue-700 no-underline" href="{{ route('login') }}">
-                                {{ __('Back to login') }}
-                            </a>
-                        </p>
-                    </div>
-                </form>
-            </section>
+                            <label for="email">Email address... </label>
+                        </div>
+
+                        <div class="fm-btn field">
+                            <input type="submit" value="{{ __('Send Password Reset Link') }}">
+                        </div>
+                    </form>
+
+
+                    @if (Route::has('login'))
+                        <div class="extra">
+                            <div class="wrap-line">
+                                <div class="line-o-line"></div>
+                                <p>or</p>
+                                <div class="line-o-line"></div>
+                            </div>
+
+                            <div class="luck-y-btn">
+                                <a href="{{ route('login') }}">
+                                    <button class="fm-btn" type="submit">
+                                        &laquo; {{ __('Back to login') }}
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    @endif
+
+                </div>
+            </div>
         </div>
-    </div>
-</main>
+    </section>
+
 @endsection

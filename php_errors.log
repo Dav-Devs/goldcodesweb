@@ -1,0 +1,30 @@
+[08-Sep-2021 05:56:26 UTC] [2021-09-08 05:56:26] local.ERROR: Command "view:clearer" is not defined.
+
+Did you mean one of these?
+    cache:clear
+    config:clear
+    event:clear
+    optimize:clear
+    queue:clear
+    route:clear
+    view:cache
+    view:clear {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"view:clearer\" is not defined.
+
+Did you mean one of these?
+    cache:clear
+    config:clear
+    event:clear
+    optimize:clear
+    queue:clear
+    route:clear
+    view:cache
+    view:clear at /var/www/html/dd/vendor/symfony/console/Application.php:709)
+[stacktrace]
+#0 /var/www/html/dd/vendor/symfony/console/Application.php(259): Symfony\\Component\\Console\\Application->find()
+#1 /var/www/html/dd/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#2 /var/www/html/dd/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#3 /var/www/html/dd/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#4 /var/www/html/dd/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#5 {main}
+"} 
+

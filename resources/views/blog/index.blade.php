@@ -41,7 +41,7 @@
                                         <h2 class="post-title d-flex">
                                             <a href="#">{{ $post->title }}</a>
 
-                            {{-- @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id) --}}
+                            @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                                 <span>
                                     <a href="{{ url('/blog/' . $post->slug . '/edit') }}" title="Edit Post"
                                         class="btn btn-xs btn-link text-secondary">
@@ -60,7 +60,7 @@
 
                                     </form>
                                 </span>
-                            {{-- @endif --}}
+                            @endif
 
                                         </h2>
                                         <div class="post-meta">
@@ -74,27 +74,6 @@
                                         <p>{{ $post->description }}</p>
                                     </div>
                                     <div class="post-more"><a class="more-link" href="{{ url('/blog/' . $post->slug) }}">Read more</a></div>
-                                    
-                            @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
-                                <span class="float-right">
-                                    <a href="{{ url('/blog/' . $post->slug . '/edit') }}" title="Edit Post"
-                                        class="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
-                                        <i class="material-icons">edit</i>
-                                    </a>
-                                </span>
-
-                                <span class="float-right">
-                                    <form action="{{ url('/blog/' . $post->slug) }}" method="POST">
-                                        @csrf
-                                        @method('delete')
-
-                                        <button class="text-red-500 pr-3" type="submit" title="Delete Post">
-                                            <i class="material-icons">delete</i>
-                                        </button>
-
-                                    </form>
-                                </span>
-                            @endif
                                 </div>
                             </div>
 

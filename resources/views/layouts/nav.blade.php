@@ -29,10 +29,11 @@
                         @endif
 
                     @else
+                    {{ Cache::flush(); }}
                         <li class="dropdown" style="text-transform: none !important;">
                             <a class="dropdown-toggle" style="font-size: 15px !important; letter-spacing: 0.5px !important;"
                                 href="javascript:void(0);" data-toggle="dropdown">
-                                <img src="{{ Avatar::create(Auth::user()->name)->toBase64(); }}" width="26" height="26" 
+                                <img src="{{ Avatar::create(Auth::user()->email)->toBase64(); }}" width="26" height="26" 
                                     alt="{{ Auth::user()->name }}" title="{{ Auth::user()->name }}" />
                             </a>
                             <ul class="dropdown-menu">
