@@ -678,209 +678,9 @@ a,
 /*--------------------------------------------------------------
 	Buttons
 --------------------------------------------------------------*/
-.btn {
-  border-radius: 0;
-  font-family: "Roboto Condensed", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 11px;
-  padding: 8px 37px;
-}
-
-.btn.active.focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn:active:focus,
-.btn:focus {
-  outline: 0;
-}
-
-.btn.btn-round {
-  border-radius: 2px;
-}
-
-.btn.btn-circle {
-  border-radius: 30px;
-}
-
-.btn.btn-w {
-  background: rgba(255, 255, 255, 0.8);
-  color: #111;
-}
-
-.btn.btn-w:hover,
-.btn.btn-w:focus {
-  background: white;
-  color: #111;
-}
-
-.btn.btn-g {
-  background: #e5e5e5;
-  color: #111;
-}
-
-.btn.btn-g:hover,
-.btn.btn-g:focus {
-  background: #d8d8d8;
-  color: #111;
-}
-
-.btn.btn-border-w {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  color: #fff;
-}
-
-.btn.btn-border-w:hover,
-.btn.btn-border-w:focus {
-  background: #fff;
-  border-color: transparent;
-  color: #111;
-}
-
-.btn.btn-d {
-  background: rgba(17, 17, 17, 0.8);
-  color: #fff;
-}
-
-.btn.btn-d:hover,
-.btn.btn-d:focus {
-  background: #111111;
-}
-
-.btn.btn-b {
-  background: #111111;
-  color: #fff;
-}
-
-.btn.btn-b:hover,
-.btn.btn-b:focus {
-  background: rgba(17, 17, 17, 0.8);
-}
-
-.btn-border-d {
-  background: transparent;
-  border: 1px solid #111111;
-  color: #111;
-}
-
-.btn.btn-border-d:hover,
-.btn.btn-border-d:focus {
-  background: #111111;
-  color: #fff;
-}
-
-.btn.btn-font-w {
-  background: rgba(255, 255, 255, 0.8);
-  color: #fff;
-}
-
-.btn.btn-font-w:hover {
-  background: #fff;
-  color: #111;
-}
-
-/* Buttons size */
-.btn.btn-lg {
-  padding: 12px 45px;
-  font-size: 13px;
-}
-
-.btn.btn-sm {
-  padding: 6px 25px;
-  font-size: 10px;
-  letter-spacing: 1px;
-}
-
-.btn.btn-xs {
-  padding: 4px 19px;
-  font-size: 10px;
-  letter-spacing: 0;
-}
-
-.btn-list .btn {
-  margin: 5px 0;
-}
-
-.search-btn {
-  position: absolute;
-  background: transparent;
-  border: none;
-  overflow: hidden;
-  top: 50%;
-  right: 1px;
-  width: 42px;
-  height: 40px;
-  line-height: 38px;
-  font-size: 14px;
-  outline: none;
-  color: #999;
-  margin-top: -20px;
-}
-
-.image-button {
-  margin: 0px 5px;
-}
-
 /*--------------------------------------------------------------
 	Forms
 --------------------------------------------------------------*/
-/* Selection */
-::-moz-selection {
-  background: #000;
-  color: #fff;
-}
-
-::-webkit-selection {
-  background: #000;
-  color: #fff;
-}
-
-::selection {
-  background: #000;
-  color: #fff;
-}
-
-/* Forms common style */
-.form-control {
-  font-family: "Roboto Condensed", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 11px;
-  height: 33px;
-  border: 1px solid #EAEAEA;
-  border-radius: 2px;
-  transition: all 0.4s ease-in-out 0s;
-}
-
-.form-control:focus {
-  border-color: #CACACA;
-}
-
-/* Forms size */
-.input-lg,
-.form-horizontal .form-group-lg .form-control {
-  height: 43px;
-  font-size: 13px;
-}
-
-.input-sm, .form-horizontal .form-group-sm .form-control {
-  height: 29px;
-  font-size: 10px;
-}
-
-.rqst-form {
-  margin-top: 27px;
-}
-.rqst-form .btn {
-  margin-top: 5px;
-}
-
-.input-group-addon {
-  border: 1px solid #e4e4e4 !important;
-}
-
 /*--------------------------------------------------------------
 	Typography
 --------------------------------------------------------------*/
@@ -1016,185 +816,6 @@ blockquote {
 /*--------------------------------------------------------------
 	Slider & Carousel
 --------------------------------------------------------------*/
-/* -------------------------------------------------------------------
-General Styles - FlexSlider
-------------------------------------------------------------------- */
-.flex-direction-nav a,
-.flex-control-nav > li > a {
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.flex-direction-nav a {
-  position: absolute;
-  display: block;
-  height: 100%;
-  width: 50%;
-  top: 0;
-  z-index: 10;
-  overflow: hidden;
-  opacity: 0;
-  margin: 0;
-}
-
-.flex-direction-nav .flex-prev {
-  opacity: 0;
-  left: 0;
-  cursor: url(../images/prev-light.png), e-resize;
-}
-
-.flex-direction-nav .flex-next {
-  opacity: 0;
-  right: 0;
-  cursor: url(../images/next-light.png), e-resize;
-}
-
-.flex-control-nav {
-  position: absolute;
-  width: auto;
-  left: 50%;
-  bottom: 20px;
-  z-index: 11;
-  text-align: center;
-  transform: translateX(-50%);
-}
-
-.flex-control-nav > li {
-  display: inline-block;
-  margin: 5px 3px;
-}
-
-.flex-control-nav > li > a {
-  background: transparent;
-  border: 1px solid #fff;
-  display: block;
-  height: 6px;
-  width: 6px;
-  border-radius: 6px;
-}
-
-.flex-control-nav > li > a:hover,
-.flex-control-nav > li > a.flex-active {
-  background: #fff;
-}
-
-/* -------------------------------------------------------------------
-Hero Slider
-------------------------------------------------------------------- */
-.hero-slider {
-  margin: 0 !important;
-}
-
-.hero-slider .slides > li {
-  display: none;
-  -webkit-backface-visibility: hidden;
-}
-
-.hero-slider,
-.hero-slider .flex-viewport {
-  height: 100% !important;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-.hero-slider .slides {
-  height: 100% !important;
-  transition-delay: 1s;
-}
-
-.hero-slider .flex-direction-nav a {
-  width: 15%;
-}
-
-.hero-slider .slides li {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  height: 100% !important;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-}
-
-/* Caption */
-.titan-caption {
-  position: relative;
-  display: table;
-  height: 100%;
-  width: 70%;
-  margin: 0 auto;
-}
-
-.titan-caption {
-  position: relative;
-  display: table;
-  height: 100%;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.caption-content {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-}
-
-/*
-Photography Page Slider
-*/
-.photography-page .image-caption {
-  bottom: 20px;
-  position: absolute;
-  width: 35%;
-}
-.photography-page .image-caption .caption-text {
-  font-size: 24px;
-  text-transform: capitalize;
-  letter-spacing: 1px;
-}
-.photography-page .flex-control-nav {
-  left: 80%;
-  bottom: 20px;
-  z-index: 11;
-}
-
-/* -------------------------------------------------------------------
-General Styles - Owlcarousel
-------------------------------------------------------------------- */
-.owl-controls {
-  margin-top: 40px;
-}
-
-.owl-pagination div {
-  display: inline-block;
-}
-
-.owl-controls .owl-page span {
-  background: transparent;
-  border: 1px solid #111;
-  display: block;
-  height: 6px;
-  width: 6px;
-  margin: 0 3px 5px;
-  border-radius: 6px;
-  transition: all 0.3s ease-in-out 0s;
-}
-
-.owl-controls .owl-page.active span,
-.owl-controls.clickable .owl-page:hover span {
-  background: #111;
-}
-
-.owl-controls .owl-buttons > div {
-  display: inline-block;
-  margin: 5px;
-  font-size: 14px;
-  color: #111;
-}
-
 /*--------------------------------------------------------------
 	Preloader
 --------------------------------------------------------------*/
@@ -1255,133 +876,6 @@ General Styles - Owlcarousel
 /*--------------------------------------------------------------
 	Navbar
 --------------------------------------------------------------*/
-.navbar-custom {
-  background-color: rgba(10, 10, 10, 0.9);
-  border: 0;
-  border-radius: 0;
-  z-index: 1000;
-  font-family: "Roboto Condensed", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 11px;
-  transition: background, padding 0.4s ease-in-out 0s;
-}
-
-.navbar a {
-  transition: color 0.125s ease-in-out 0s;
-}
-
-.navbar-custom .dropdown-menu {
-  background: rgba(26, 26, 26, 0.9);
-  border-radius: 0;
-  border: 0;
-  padding: 0;
-  box-shadow: none;
-}
-
-.navbar-custom .navbar-brand {
-  letter-spacing: 4px;
-  font-weight: 400;
-  font-size: 22px;
-  color: #fff;
-}
-
-.navbar-custom .nav li > a {
-  position: relative;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.navbar-custom .dropdown-menu > li > a {
-  border-bottom: 1px solid rgba(73, 71, 71, 0.15) !important;
-  padding: 11px 15px;
-  letter-spacing: 2px;
-  color: #999;
-}
-
-.navbar-custom .dropdown-menu .dropdown-menu {
-  border-left: 1px solid rgba(73, 71, 71, 0.15);
-  left: 100%;
-  right: auto;
-  top: 0;
-  margin-top: 0;
-}
-
-.navbar-custom .dropdown-menu.left-side .dropdown-menu {
-  border: 0;
-  border-right: 1px solid rgba(73, 71, 71, 0.15);
-  right: 100%;
-  left: auto;
-}
-
-.navbar-custom .nav > li > a:focus,
-.navbar-custom .nav > li > a:hover,
-.navbar-custom .nav .open > a,
-.navbar-custom .nav .open > a:focus,
-.navbar-custom .nav .open > a:hover,
-.navbar-custom .dropdown-menu > li > a:focus,
-.navbar-custom .dropdown-menu > li > a:hover {
-  background: none;
-  color: #fff;
-}
-
-.navbar-custom .dropdown-menu > li > a:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-}
-
-.navbar-custom .dropdown-toggle:after {
-  position: absolute;
-  display: block;
-  right: 0;
-  top: 50%;
-  margin-top: -6px;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 9px;
-  content: "";
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.navbar-custom .navbar-toggle .icon-bar {
-  background: #fff;
-}
-
-.dropdown-menu {
-  min-width: 180px;
-  font-size: 11px;
-}
-
-/* Navbar search
-
-.dropdown-search {
-	position: relative;
-	padding: 5px;
-}
-
-.dropdown-search .form-control {
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 11px;
-}
-
-.search-btn {
-	position: absolute;
-	background: transparent;
-	border: none;
-	overflow: hidden;
-	top: 50%;
-	right: 1px;
-	width: 42px;
-	height: 40px;
-	line-height: 38px;
-	font-size: 14px;
-	outline: none;
-	color: #999;
-	margin-top: -20px;
-}*/
 /*--------------------------------------------------------------
 	Header
 --------------------------------------------------------------*/
@@ -2294,7 +1788,7 @@ Google map
 
 .panel-heading a:after {
   position: absolute;
-  content: "";
+  content: "\f106";
   top: 50%;
   right: 0px;
   font-family: "FontAwesome";
@@ -2304,7 +1798,7 @@ Google map
 }
 
 .panel-heading a.collapsed:after {
-  content: "";
+  content: "\f107";
 }
 
 /* Tables */
@@ -2704,7 +2198,7 @@ Google map
     margin-top: -6px;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: 9px;
-    content: "";
+    content: "\f105";
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -2793,13 +2287,13 @@ Google map
   .navbar-custom .dropdown-toggle:after,
 .navbar-custom .dropdown-menu .dropdown-toggle:after {
     right: 7px;
-    content: "";
+    content: "\f107";
   }
 
   .navbar-custom .nav > .open > .dropdown-toggle:after,
 .navbar-custom .dropdown-menu .dropdown.open .dropdown-toggle:after {
     right: 7px;
-    content: "";
+    content: "\f106";
   }
 
   /* Shop navbar */
@@ -2812,7 +2306,7 @@ Google map
   }
 
   .navbar-custom .navbar-cart > a:after {
-    content: "";
+    content: "\f107";
   }
 
   .navbar-custom .navbar-cart-item a {
@@ -2941,4 +2435,5 @@ Google map
 .works-grid-5 .work-item {
     width: 100%;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */

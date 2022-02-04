@@ -23,6 +23,10 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
+                                <div class="alert alert-danger" role="alert">
+                                
+                                </div>
+
                             @error('email')
                                 <div class="alert alert-danger" role="alert">
                                     {{ $message }}

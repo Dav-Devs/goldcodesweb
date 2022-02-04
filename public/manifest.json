@@ -1,0 +1,33 @@
+{
+  "name": "Gold Codes Web BETA",
+  "short_name": "GoldCodesWeb",
+  "lang": "en-US",
+  "description": "Project G.C.W.",
+  "icons": [
+    { "src": "favicons/gcw-icon-16x16.png", "sizes": "16x16", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-32x32.png", "sizes": "32x32", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-44x44.png", "sizes": "44x44", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-57x57.png", "sizes": "57x57", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-60x60.png", "sizes": "60x60", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-72x72.png", "sizes": "72x72", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-76x76.png", "sizes": "76x76", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-96x96.png", "sizes": "96x96", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-114x114.png", "sizes": "114x114", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-120x120.png", "sizes": "120x120", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-128x128.png", "sizes": "128x128", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-144x144.png", "sizes": "144x144", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-152x152.png", "sizes": "152x152", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-180x180.png", "sizes": "180x180", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-192x192.png", "sizes": "192x192", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-256x256.png", "sizes": "256x256", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-512x512.png", "sizes": "512x512", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-620x620.png", "sizes": "620x620", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-1024x1024.png", "sizes": "1024x1024", "type": "image/png" }
+    ,{ "src": "favicons/gcw-icon-1200x1200.png", "sizes": "1200x1200", "type": "image/png" }
+  ],
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#FFFBE6",
+  "theme_color": "#FFD700"
+}

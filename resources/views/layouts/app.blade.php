@@ -63,7 +63,7 @@
     <link rel="icon" type="image/png" sizes="96x96" href="{{ url('/favicons/favicon-96x96.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ url('/favicons/favicon-16x16.png') }}">
     
-    <link rel="shortcut icon" href="{{ url('/favicons/svg/GCW-48x48.svg') }}" type="image/svg+xml">
+    <link rel="shortcut icon" href="{{ url('/favicons/favicon-96x96.png') }}" type="image/png">{{-- image/svg+xml --}}
 
     <!-- Logo Wave Preloader -->
 
@@ -338,7 +338,7 @@
 
     </style>
 
-    {{-- <link rel="manifest" href="{{ url('/mix-manifest.json') }}"> --}}
+    <link rel="manifest" href="{{ url('/manifest.json') }}">
     <meta name="msapplication-TileColor" content="#daa520">
     <meta name="msapplication-TileImage" content="{{ url('/favicons/GCW-144.png') }}">
     <meta name="theme-color" content="#daa520">
@@ -357,6 +357,9 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Regular" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Livvic+Regular" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=LexendDeca+Regular" rel="stylesheet">
 
     @endproduction
 
@@ -366,13 +369,10 @@
     <link href="{{ asset('assets/lib/animate.css/animate.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/lib/components-font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/lib/et-line-font/et-line-font.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/lib/flexslider/flexslider.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/lib/owl.carousel/dist/assets/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/lib/magnific-popup/dist/magnific-popup.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/lib/simple-text-rotator/simpletextrotator.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('assets/lib/simple-text-rotator/simpletextrotator.css') }}" rel="stylesheet"> --}}
 
-    <!-- Main stylesheet and color file-->
+    <!-- Main stylesheet -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <link id="color-scheme" href="{{ asset('assets/css/colors/default.css') }}" rel="stylesheet">
 
@@ -384,6 +384,29 @@
     @yield('extra_stylesheet')
 
     <link rel="stylesheet" href="{{ asset('dist/css/bs-custom.css') }}">
+
+    <!-- Scripts -->
+    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+
+    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
+
+    {{-- <script src="{{ asset('assets/lib/jquery/dist/jquery.js') }}"></script>
+    <script src="{{ asset('assets/lib/bootstrap/dist/js/bootstrap.min.js') }}"></script> --}}
+
+    <script src="{{ asset('assets/lib/wow/dist/wow.js') }}"></script>
+    <script src="{{ asset('assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js') }}"></script>
+
+    <script src="{{ asset('assets/lib/smoothscroll.js') }}"></script> 
+    <script src="{{ asset('assets/lib/magnific-popup/dist/jquery.magnific-popup.js') }}"></script>
+    <script src="{{ asset('assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
+
+    {{-- <script src="{{ asset('js/jquery.script.js') }}"></script> --}}
+    {{-- <script src="{{ asset('js/bs.script.js') }}"></script> --}}
+    
+    @yield('extra_script')
 </head>
 
 <body class="state-spinner-fixed" data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
@@ -400,21 +423,15 @@
                 d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
             </path>
         </symbol>
-
-        <symbol id="facebook" viewBox="0 0 16 16">
-            <path
-                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
-            </path>
-        </symbol>
     </svg>
 
-    @yield('logout_modal')
+    {{-- @yield('logout_modal') --}}
 
+    <main>
     <nav class="navbar navbar-custom navbar-fixed-top" style="background: #fcf6e9" role="navigation">
         @include('layouts.nav')
     </nav>
 
-    <main>
         <div class="prel">
             <div class="page-loader">
                 {{-- <div class="loader">Loading...</div> --}}
@@ -433,28 +450,6 @@
     <div>
         @include('layouts.footer')
     </div>
-
-    <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-
-    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
-
-    <script src="{{ asset('assets/lib/wow/dist/wow.js') }}"></script>
-    <script src="{{ asset('assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js') }}"></script>
-    <script src="{{ asset('assets/lib/isotope/dist/isotope.pkgd.js') }}"></script>
-    <script src="{{ asset('assets/lib/imagesloaded/imagesloaded.pkgd.js') }}"></script>
-    <script src="{{ asset('assets/lib/flexslider/jquery.flexslider.js') }}"></script>
-    <script src="{{ asset('assets/lib/owl.carousel/dist/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/lib/smoothscroll.js') }}"></script>
-    <script src="{{ asset('assets/lib/magnific-popup/dist/jquery.magnific-popup.js') }}"></script>
-    <script src="{{ asset('assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-
-    {{-- <script src="{{ asset('js/jquery.script.js') }}"></script> --}}
-    @yield('extra_script')
-    {{-- <script src="{{ asset('js/bs.script.js') }}"></script> --}}
 
 </body>
 

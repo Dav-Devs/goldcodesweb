@@ -8,11 +8,11 @@
 @endsection
 @section('content')
 
-    <main>
+    {{-- <main> --}}
 
         <!-- Site Head -->
 
-        <section class="site-head">
+        <section class="site-head full-height">
 
             <div class="site-bg">
                 <h3>David's Developments</h3>
@@ -24,6 +24,6 @@
 
         <!-- End Head -->
 
-    </main>
+    {{-- </main> --}}
 
 @endsection
