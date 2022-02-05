@@ -328,8 +328,12 @@
             text-decoration: none !important;
         } */
 
-        .navbar-brand svg {
+        .navbar-toggler-icon {
+          background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
 
+        .navbar-toggler {
+            box-shadow: none !important;
         }
 
         .fm-container .f_input {
@@ -343,15 +347,6 @@
     <meta name="msapplication-TileImage" content="{{ url('/favicons/GCW-144.png') }}">
     <meta name="theme-color" content="#daa520">
 
-
-    <!-- ==================== Stylesheets ==================== -->
-    <!-- Default stylesheets-->
-
-
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-reboot.min.css') }}">
-
-    <link href="{{ asset('assets/lib/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
-
     @production
 
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
@@ -364,44 +359,19 @@
     @endproduction
 
     <link rel="stylesheet" href="/assets/font.css">
-
-    <!-- Template specific stylesheets-->
-    <link href="{{ asset('assets/lib/animate.css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/lib/components-font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/lib/et-line-font/et-line-font.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/lib/magnific-popup/dist/magnific-popup.css') }}" rel="stylesheet">
-    {{-- <link href="{{ asset('assets/lib/simple-text-rotator/simpletextrotator.css') }}" rel="stylesheet"> --}}
-
-    <!-- Main stylesheet -->
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-    <link id="color-scheme" href="{{ asset('assets/css/colors/default.css') }}" rel="stylesheet">
-
-    <!-- Styles -->
-
+    
     <link rel="stylesheet" href="/assets/material.css">
     <link rel="stylesheet" href="/assets/frameworks/fontawesome/css/all.min.css">
-
+    
+    <link href="{{ asset('assets/lib/magnific-popup/dist/magnific-popup.css') }}" rel="stylesheet">
     @yield('extra_stylesheet')
-
-    <link rel="stylesheet" href="{{ asset('dist/css/bs-custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-
-    <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.bundle.js') }}"></script>
-
-    {{-- <script src="{{ asset('assets/lib/jquery/dist/jquery.js') }}"></script>
-    <script src="{{ asset('assets/lib/bootstrap/dist/js/bootstrap.min.js') }}"></script> --}}
-
+    {{-- <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script> --}}
     <script src="{{ asset('assets/lib/wow/dist/wow.js') }}"></script>
-    <script src="{{ asset('assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js') }}"></script>
-
-    <script src="{{ asset('assets/lib/smoothscroll.js') }}"></script> 
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('assets/lib/magnific-popup/dist/jquery.magnific-popup.js') }}"></script>
-    <script src="{{ asset('assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
 
     {{-- <script src="{{ asset('js/jquery.script.js') }}"></script> --}}
     {{-- <script src="{{ asset('js/bs.script.js') }}"></script> --}}
@@ -428,7 +398,7 @@
     {{-- @yield('logout_modal') --}}
 
     <main>
-    <nav class="navbar navbar-custom navbar-fixed-top" style="background: #fcf6e9" role="navigation">
+    <nav class="navbar navbar-dark navbar-expand-md navbar-fixed-top" style="background: #fcf6e9" role="navigation">
         @include('layouts.nav')
     </nav>
 

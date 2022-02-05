@@ -12,12 +12,12 @@
           </a>
       </div>
       <div class="collapse navbar-collapse" id="n_b">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav justify-content-end">
               <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
+                  <a class="nav-link active" aria-current="page" href="{{ url('/') }}">{{ __('Home') }}</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="{{ url('/blog') }}">Blog</a>
+                  <a class="nav-link" href="{{ url('/blog') }}">{{ __('Blog') }}</a>
               </li>
               @guest
                   <li class="nav-item">

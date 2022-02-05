@@ -1,4 +1,4 @@
-@import "tailwindcss/base";
+/* @import "tailwindcss/base";
 
 @import "tailwindcss/components";
 
@@ -10,4 +10,11 @@
     background-attachment: fixed;
     background-size: cover;
     height: 600px;
-}
+} */
+
+@import "../assets/lib/animate.css/animate.css";
+
+/*! style.css */
+@import "../assets/css/style.css";
+@import "../dist/css/bs-custom.css";
+@import "../dist/css/bootstrap-reboot.css";
