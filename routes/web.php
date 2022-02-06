@@ -25,3 +25,7 @@ Auth::routes();
 Route::get('/home', [PagesController::class, 'index'])->name('home');
 
 Route::get('/rdr', [RedirectController::class, 'index']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

@@ -1,0 +1,6 @@
+[06-Feb-2022 04:47:17 Africa/Brazzaville] PHP Warning:  include_once(../src/PWAssist.php): failed to open stream: No such file or directory in /var/www/html/dd/public/mkmanifest/pwa_gen/pwagenerate.php on line 9
+[06-Feb-2022 04:47:17 Africa/Brazzaville] PHP Warning:  include_once(): Failed opening '../src/PWAssist.php' for inclusion (include_path='.:/usr/share/php') in /var/www/html/dd/public/mkmanifest/pwa_gen/pwagenerate.php on line 9
+[06-Feb-2022 04:47:17 Africa/Brazzaville] PHP Fatal error:  Uncaught Error: Class 'PWAssist' not found in /var/www/html/dd/public/mkmanifest/pwa_gen/pwagenerate.php:10
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/dd/public/mkmanifest/pwa_gen/pwagenerate.php on line 10

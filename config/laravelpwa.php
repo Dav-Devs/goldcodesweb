@@ -1,16 +1,16 @@
 <?php
 
 return [
-    'name' => 'LaravelPWA',
+    'name' => 'Project G.C.W.',
     'manifest' => [
-        'name' => env('APP_NAME', 'My PWA App'),
-        'short_name' => 'PWA',
+        'name' => env('APP_NAME', 'GoldCodesWeb BETA'),
+        'short_name' => 'GCW BETA.',
         'start_url' => '/',
-        'background_color' => '#ffffff',
-        'theme_color' => '#000000',
+        'background_color' => '#fffbe6',
+        'theme_color' => '#ffd700',
         'display' => 'standalone',
         'orientation'=> 'any',
-        'status_bar'=> 'black',
+        'status_bar'=> 'gold',
         'icons' => [
             '72x72' => [
                 'path' => '/images/icons/icon-72x72.png',
@@ -59,18 +59,22 @@ return [
         ],
         'shortcuts' => [
             [
-                'name' => 'Shortcut Link 1',
-                'description' => 'Shortcut Link 1 Description',
-                'url' => '/shortcutlink1',
+                'name' => 'GoldCodesWeb BETA',
+                'description' => 'Project G.C.W.',
+                'url' => '/',
                 'icons' => [
                     "src" => "/images/icons/icon-72x72.png",
                     "purpose" => "any"
                 ]
             ],
             [
-                'name' => 'Shortcut Link 2',
-                'description' => 'Shortcut Link 2 Description',
-                'url' => '/shortcutlink2'
+                'name' => 'GoldCodesWeb Offline',
+                'description' => 'G.C.W. Offline',
+                'url' => '/offline',
+                'icons' => [
+                    "src" => "/images/icons/icon-72x72.png",
+                    "purpose" => "any"
+                ]
             ]
         ],
         'custom' => []
