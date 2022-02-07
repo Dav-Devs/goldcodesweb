@@ -12,5 +12,5 @@ jobs:
     - uses: actions/first-interaction@v1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: 'Welcome, to the G.C.W. Project, Please read ISSUES.md before posting, Thanks.'
-        pr-message: 'Welcome, to the G.C.W. Project, Please read PULL_REQUESTS.md before posting, Thanks.'
+        issue-message: 'Welcome, to the G.C.W. Project, Hope you succeed in all your endeavours,And thanks i"ll check it out.'
+        pr-message: 'Welcome, to the G.C.W. Project, Hope you succeed in all your endeavours,And thanks i"ll check it out.'
