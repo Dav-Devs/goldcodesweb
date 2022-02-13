@@ -112,10 +112,6 @@ Route::post('/auth/forgot-password', function (Request $request) {
                 : back()->withErrors(['email' => __($status)]);
 })->middleware('guest')->name('password.email');
 
-Route::get('/auth/reset-password/{token}', function ($token) {
-    return view('auth.reset-password', ['token' => $token]);
-})->middleware('guest')->name('password.reset');
-
 Route::post('/auth/reset-password', function (Request $request) {
     $request->validate([
         'token' => 'required',
