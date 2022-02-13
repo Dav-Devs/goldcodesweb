@@ -1,4 +1,4 @@
-by using Moment library and some custom logic, we can get the exact date difference
+// by using Moment library and some custom logic, we can get the exact date difference
 
 var out;
 

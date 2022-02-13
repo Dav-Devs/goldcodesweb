@@ -1,0 +1,64 @@
+a {
+  text-decoration: none;
+  color: #3f4954;
+}
+
+h1 {
+  font-family: "LexendDeca", cursive;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-family: "LexendDeca", cursive;
+}
+
+h3 {
+  font-family: "Livvic", cursive;
+  font-size: 1.3rem;
+}
+
+button.btn {
+  border: none;
+  border-radius: 2rem;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  font-family: "Livvic", cursive;
+  cursor: pointer;
+  transition: none;
+}
+
+span {
+  font-family: "Nunito", cursive;
+}
+
+p {
+  font-family: "ComicNeue", cursive;
+  color: #686666da;
+}
+
+main .site-head {
+  background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.25) 200%);
+  background-size: cover;
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+}
+main .site-head .site-bg {
+  padding-top: 10rem;
+  text-align: center;
+  color: #f6f7fb;
+}
+main .site-head h1,
+main .site-head h3 {
+  margin: 0.3rem;
+}
+main .site-head .btn {
+  margin: 1.8rem;
+  background: linear-gradient(120deg, #babec4f3 0%, #c3dce7e9 100%);
+  color: #f6f7fb;
+}
+main .site-head .btn:hover {
+  background: transparent;
+  border: 1px solid #d6e7fb;
+  color: #f6f7fb;
+}

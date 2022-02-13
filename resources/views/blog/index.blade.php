@@ -14,7 +14,7 @@
 
     @if (Auth::check())
         <div class="pt-15 w-4/5 m-auto">
-            <a href="/blog/create" class="text-xs btn">
+            <a href="{{ url('/blog/create/') }}" class="text-xs btn">
                 Create post
             </a>
         </div>

@@ -1,3 +1,7 @@
+    <nav class="navbar navbar-dark navbar-expand-md navbar-fixed-top" style="background: #fcf6e9" role="navigation">
+        @include('layouts.nav')
+    </nav>
+
   <div class="container-fluid">
 
       <div class="navbar-header">
@@ -12,14 +16,16 @@
           </a>
       </div>
       <div class="collapse navbar-collapse" id="n_b">
-          <ul class="navbar-nav justify-content-end">
+          <ul class="navbar-nav mr-4">
               <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="{{ url('/') }}">{{ __('Home') }}</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="{{ url('/blog') }}">{{ __('Blog') }}</a>
               </li>
+          </ul>
               @guest
+              <ul class="navabar-nav">
                   <li class="nav-item">
                       <a class="nav-link" href="{{ route('login') }}">{{ __('Log In') }}</a>
                   </li>
@@ -31,7 +37,7 @@
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="n_drp" role="button" data-bs-toggle="dropdown"
                           aria-expanded="false">
-                          <img src="{{ Avatar::create(Auth::user()->name)->toBase64() }}" width="26" height="26"
+                          <img src="{{ URL::signedRoute('icon.png', ['s' => 100, 'uid' => md5(Auth::user()->email)]); }}" width="26" height="26"
                               alt="{{ Auth::user()->name }}" title="{{ Auth::user()->name }}" />
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="n_drp">
@@ -50,6 +56,7 @@
                           </form>
                       </ul>
                   </li>
+                </ul>
               @endguest
       </div>
   </div>

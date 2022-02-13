@@ -1,48 +1,106 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+@extends('layouts.app')
 
-        <x-jet-validation-errors class="mb-4" />
+@section('title') Log In @endsection
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
+@section('extra_stylesheet')
+
+    <link rel="stylesheet" href="{{ asset('assets/css/p-forms.css') }}">
+
+@endsection
+
+@section('extra_script') 
+{{-- <script src="{{ asset('js/a.js') }}"></script> --}}
+@endsection
+
+@section('content')
+
+    <section class="fm">
+        <div class="mw">
+            <h2 class="fmtitle">Log In</h2>
+            <div class="fm-container">
+                <div class="col right">
+
+                    <form method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                            @error('email')
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                            
+                            @error('password')
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
+                        <div class="field email form-floating f_input">
+                            <input type="email" name="email" class="form-control @error('name') is-invalid @enderror" style="text-transform: none; letter-spacing: 1px;" id="email" value="{{ old('email') }}" placeholder="Email..." required autocomplete="email" autofocus>
+                            
+                            <label for="email">Email address... </label>
+                                @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="field name form-floating f_input">
+                            <input type="password" name="password" class="form-control @error('name') is-invalid @enderror" style="text-transform: none; letter-spacing: 1px;" id="password" placeholder="Password..." required autofocus>
+                            
+                            <label for="password">Password... </label>
+                                @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                                @error('password')
+                                <div class="alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
+                        <div class="field name form-check">
+                            <input type="checkbox" name="remember" id="remember" class="form-check-input"
+                                {{ old('remember') ? 'checked' : '' }}>
+                            <label class="form-check-label" for="flexCheckDefault">
+                                {{ __('Remember Me') }}
+                            </label>
+                        </div>
+
+                        <div class="fm-btn field">
+                            <input type="submit" value="Log In">
+                        </div>
+                    </form>
+
+                    <div class="extra">
+                        {{-- <a href="#">Forgotten password?</a><br> --}}
+                        @if (Route::has('password.request'))
+                            <a href="{{ route('password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                            </a>
+                        @endif
+
+                        @if (Route::has('register'))
+                        <div class="wrap-line">
+                            <div class="line-o-line"></div>
+                            <p>or</p>
+                            <div class="line-o-line"></div>
+                        </div>
+
+                        <div class="luck-y-btn">
+                            <a href="{{ route('register') }}">
+                                <button class="fm-btn" type="submit">{{ __('Create New Account')}}</button></a>
+                        </div>
+                        @endif
+                    </div>
+
+                </div>
             </div>
-        @endif
+        </div>
+    </section>
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <div>
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('Password') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-            </div>
-
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
-</x-guest-layout>
+@endsection

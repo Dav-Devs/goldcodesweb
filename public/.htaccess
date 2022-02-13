@@ -19,3 +19,9 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+php_value session.gc_maxlifetime 409600
+php_value max_input_time         409600
+php_value max_execution_time     409600
+php_value upload_max_filesize    2048M
+php_value post_max_size          1024M
