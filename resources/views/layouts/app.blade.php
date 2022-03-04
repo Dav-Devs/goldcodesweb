@@ -1,136 +1,112 @@
 @include('logo')
 
+@php
+$cache = true;
+$nocache = md5('nocache');
+$yescache = md5(microtime(true));
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    
-    <link rel="shortcut icon" href="{{ url('/favicons/favicon-96x96.png') }}" type="image/png">{{-- image/svg+xml --}}
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title') &middot; {{ str_replace('_', ' ', env('APP_NAME', 'Gold_Codes_Web BETA')) }}</title>
+        <title>@yield('title') &middot; {{ str_replace('_', ' ', config('app.name', 'Gold_Codes_Web BETA')) }}</title>
 
-    @laravelPWA
+        @laravelPWA
 
-    <!-- Preloader -->
+        <livewire:preloader />
 
-    <livewire:preloader />
+        <livewire:inline-styles />
 
-    <livewire:inline-styles />
+        <livewire:npstyles />
 
-    @production
+        <!-- Fonts -->
+        <link rel="stylesheet" href="http://localhost/assets/font.css?s={{ $cache=false ? $nocache : $yescache; }}">
+        <link rel="stylesheet" href="http://localhost/assets/material.css?s={{ $cache=false ? $nocache : $yescache; }}">
+        <link rel="stylesheet"
+            href="http://localhost/assets/frameworks/fontawesome/css/all.min.css?s={{ $cache=false ? $nocache : $yescache; }}">
 
+        @production
+
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Livvic" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=LexendDeca" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Regular" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Livvic+Regular" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=LexendDeca+Regular" rel="stylesheet">
 
-    @endproduction
+        @endproduction
 
-    <link rel="stylesheet" href="http://localhost/assets/font.css">
-    
-    <link rel="stylesheet" href="http://localhost/assets/material.css">
-    <link rel="stylesheet" href="http://localhost/assets/frameworks/fontawesome/css/all.min.css">
-    
-    <link href="{{ asset('assets/lib/magnific-popup/dist/magnific-popup.css') }}" rel="stylesheet">
+        <!-- Styles -->
+        {{-- <link href="/assets/css/bootstrap-reboot.min.css?s={{ $cache=false ? $nocache : $yescache; }}"
+        rel="stylesheet"> --}}
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+        @livewireStyles
 
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-reboot.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/bs-custom.css') }}">
+        @yield('extra_stylesheet')
 
-    @yield('extra_stylesheet')
+    </head>
 
-    @livewireStyles
+    <body>
+        <div id="app">
 
-{{-- <script>
+            <livewire:nav />
 
-function p_n(progress) {
- 
-        var pbar = setInterval(() => {
+            <main>
 
-            $('div.progress-bar').attr('aria-valuenow', progress);
-            $('div.progress-bar').css({ width: progress + '%' });
-            $('div.progress-bar').text(progress + '%');
-        }, 50);
-
-        if (progress == 100) {
-
-            clearInterval(pbar);
-        }
- 
-}
-
-</script> --}}
-    
-</head>
-
-<body class="state-spinner-fixed" data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
-
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="github" viewBox="0 0 16 16">
-            <path
-                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
-            </path>
-        </symbol>
-
-        <symbol id="twitter" viewBox="0 0 16 16">
-            <path
-                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
-            </path>
-        </symbol>
-    </svg>
-
-    {{-- @yield('logout_modal') --}}
-
-    <main>
-
-        <livewire:nav />
-
-        <div class="prel">
-            <div class="page-loader">
-                {{-- <div class="loader">Loading...</div> --}}
-                <div class="wave-container">
-                    <div class="in_wave"></div>
-                    <div class="img">
-                        {{-- <img src="@yield('logo_datapng_uri')" width="100" height="100" alt="GoldCodesWeb"> --}}
-                        @yield('logo_svg')
+                {{-- <div class="prel">
+                    <div class="page-loader">
+                        <div class="wave-container">
+                            <div class="in_wave"></div>
+                            <div class="img">
+                                @yield('logo_svg')
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div> --}}
+
+                @yield('content')
+            </main>
         </div>
-        @yield('content')
-    </main>
 
-    <div>
-        @include('layouts.footer')
-    </div>
+        @livewireScripts
 
-    <!-- Scripts -->
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}"></script>
+        {{-- <script src="{{ asset('assets/lib/nprogress/nprogress.js') }}"></script> --}}
 
-    @livewireScripts
+        <livewire:npscripts />
 
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('assets/lib/wow/dist/wow.js') }}"></script>
+        <script>
+            NProgress.start();
+        </script>
 
-    <script src="{{ asset('assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js') }}"></script>
-    <script src="{{ asset('assets/lib/isotope/dist/isotope.pkgd.js') }}"></script>
-    <script src="{{ asset('assets/lib/imagesloaded/imagesloaded.pkgd.js') }}"></script>
-    <script src="{{ asset('assets/lib/flexslider/jquery.flexslider.js') }}"></script>
+        <script src="{{ asset('js/push-notifications-cdn.js') }}"></script>
+        <script src="{{ asset('js/zm.js') }}"></script>
 
-    <script src="{{ asset('assets/lib/magnific-popup/dist/jquery.magnific-popup.js') }}"></script>
-    <script src="{{ asset('assets/js/plugins.js') }}"></script>
-    <script src="{{ asset('js/zm.js') }}"></script>
+        <script>
+            if (navigator.onLine) {
+                const beamsClient = new PusherPushNotifications.Client({
+                instanceId: 'f37d8b9f-5819-4083-a87d-e5da49f6f6c7',
+                });
+                
+                beamsClient.start()
+                .then(() => beamsClient.addDeviceInterest('hello'))
+                .then(() => console.log('Initialization success'))
+                .catch(console.error);
+            }
+        </script>
 
-    @yield('extra_script')
+        @yield('extra_script')
 
-</body>
+    </body>
 
 </html>

@@ -1,12 +1,12 @@
 * {
-  margin: 0;
+  /* margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
+  text-decoration: none; */
   scroll-behavior: smooth;
-  font-family: "Nunito";
+  /* font-family: "Nunito";
   transition: all 0.3s ease-in-out;
-  font-size: 15px;
+  font-size: 15px; */
 }
 
 :root {
@@ -74,21 +74,27 @@ section .title::after {
   height: 80px;
   width: 100%;
 }
-.fm .right form input:not(.fm-btn > input, #remember) {
+.fm .right form input:not(.fm-btn > input, #remember, [type=checkbox]) {
   font-family: "Livvic", cursive;
-  height: 100%;
-  width: 100%;
+  /* height: 100%;
+  width: 100%; */
   border-radius: 3px;
   border: none;
   outline: none;
   font-size: 15px !important;
-  background: #f5f6f7;
+  /* background: #f5f6f7; */
 }
-.fm .right form input:not(.fm-btn > input, #remember):focus {
-  border: 1px solid #daa520;
+.fm .right form input:not(.fm-btn > input, #remember, [type=checkbox]):focus {
+  border: 1px solid #daa520a6;
   background: #fff;
   box-shadow: 1px 1px 3px 0px #bdbbbb6e;
 }
+
+input[type=checkbox] {
+  border: 1px solid #daa520a6;
+  box-shadow: 1px 1px 3px 0px #bdbbbb6e !important;
+}
+
 .fm .right form .btn {
   height: 47px;
   width: 170px;

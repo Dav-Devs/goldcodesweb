@@ -3,7 +3,7 @@
 @section('title') You're offline @endsection
 @section('extra_stylesheet') 
 
-<link rel="stylesheet" href="{{ asset('assets/css/b-styling.css') }}">
+<link rel="stylesheet" href="{{ asset('css/bstyle.css') }}">
 
 @endsection
 @section('content')
@@ -16,8 +16,8 @@
 
             <div class="site-bg">
                 <h3>Hey You!</h3>
-                <h1>Welcome to G.C.W. but you're offline</h1>
-                <a href="{{ url('/?refresh=' . time()) }}"><button class="btn">Refresh the page</button></a>
+                <h1>I would say enjoy the app but... you're offline</h1>
+                <a href="{{ url('/?refresh=1') }}"><button class="btn btn-outline-success">Refresh the page</button></a>
             </div>
 
         </section>

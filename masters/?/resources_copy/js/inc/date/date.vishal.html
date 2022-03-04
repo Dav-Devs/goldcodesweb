@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title> Age Calculator</title>
+  </head>
+
+  <input type="date" id="startDate" value="2000-01-01">
+  <input type="date" id="endDate"  value="2020-01-01">
+  <button onclick="getAge(new Date(document.getElementById('startDate').value), new Date(document.getElementById('endDate').value))">Check Age</button>
+  <script>
+    function getAge (startDate, endDate) {
+      var diff = endDate-startDate
+      var age = new Date(new Date("0000-01-01").getTime()+diff)
+      var years = age.getFullYear()
+      var months = age.getMonth()
+      var days = age.getDate()
+      console.log(years,"years",months,"months",days-1,"days")
+      return (years+"years "+ months+ "months"+ days,"days")
+    }
+  </script>
+</html>

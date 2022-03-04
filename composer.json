@@ -6,17 +6,21 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "beyondcode/laravel-websockets": "^1.13",
+        "botman/botman": "^2.6",
+        "botman/driver-web": "^1.5",
         "cviebrock/eloquent-sluggable": "^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "gargron/fileupload": "*",
         "guzzlehttp/guzzle": "^7.0.1",
-        "laravel/framework": "^8.75",
+        "laravel/framework": "*",
         "laravel/jetstream": "^2.6",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "laravolt/avatar": "^4.1",
         "livewire/livewire": "^2.5",
+        "pusher/pusher-php-server": "*",
         "silviolleite/laravelpwa": "^2.0",
         "symfony/filesystem": "^5.4",
         "symfony/mailer": "^5.4",
@@ -48,7 +52,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan vendor:publish --force --tag=livewire:assets --ansi"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"

@@ -5,9 +5,9 @@
 
 <meta property="og:url" content="{{ url('/') }}">
 <meta property="og:locale" content="en_US" />
-<meta property="og:type" content="website, blog, cms" />
+<meta property="og:type" content="website, cms, blog, forum" />
 <meta property="og:site_name" content="GoldCodesWeb BETA">
-<meta property="og:title" content="Spread positive knowledge wider">
+<meta property="og:title" content="Project G.C.W.">
 <meta property="og:description" content="Spread positive knowledge, resources... and more; in any positive way">
 <meta property="og:image" content="{{ asset('favicons/svg/GCW-48x48.svg') }}">
 <meta property="og:image:type" content="image/png">
@@ -36,6 +36,7 @@
 
 <!-- Web Application Manifest -->
 <link rel="manifest" href="{{ route('laravelpwa.manifest') }}">
+
 <!-- Chrome for Android theme color -->
 <meta name="theme-color" content="{{ $config['theme_color'] }}">
 
@@ -84,14 +85,16 @@
 <script type="text/javascript">
     // Initialize the service worker
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('{{ url('/serviceworker.js') }}', {
+        navigator.serviceWorker.register('{{ url("/serviceworker.js") }}', {
             scope: '.'
         }).then(function (registration) {
             // Registration was successful
-            console.log('G.C.W.: ServiceWorker registration successful with scope: ', registration.scope);
+            console.log('G.C.W.: ServiceWorker Initialized with scope: ', registration.scope);
         }, function (err) {
             // registration failed :(
-            console.error('G.C.W.: ServiceWorker registration failed: ', err);
+            console.error('G.C.W.: ServiceWorker initialization failed with error: ', err);
         });
+    }else {
+        console.log('No support for service worker!');
     }
 </script>

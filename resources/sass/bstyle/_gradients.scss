@@ -1,0 +1,72 @@
+// Box Shadow
+$box-shade: 0 15px 20px #00000033;
+
+$key-shade-0: 0 21px 15px 0 #00000033;
+
+$key-shade-25: 0 38.5px 25px 0 #00000033;
+
+$key-shade-75: 0 3.5px 5px 0 #00000033;
+
+// Custom Gradients
+$white-grad: linear-gradient(120deg, #d6deeb 0%, #e1edf3 100%);
+
+$shady-grad: linear-gradient(180deg, #00000058 0%, #00000058 100%);
+
+$nova-grad: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+$navi-grad: linear-gradient(120deg, #babec4f3 0%, #c3dce7e9 100%);
+
+$hova-grad: linear-gradient(120deg, #babec4f3 0%, #c3dce7e9 100%);
+
+$slime-grad: linear-gradient(45deg, #a1fde1 0%, #c2e9fb 100%);
+
+// WebGradients Precise Gradients
+$winter-nova: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+$crystalline: linear-gradient(-20deg, #00cdac 0%, #8ddad5 100%);
+
+$cloudy: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+
+$blue-wonder: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+
+$rare-wind: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+
+$snow-again: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+
+$loon-crest: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100%),
+radial-gradient(at top center, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.40) 120%) #989898;
+
+.loon-crest {
+    background-blend-mode: multiply, multiply;
+}
+
+$ny-white: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+
+$early-growth: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+
+$perfect-white: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+
+$sand-strike: linear-gradient(to right, #c1c161 0%, #c1c161 0%, #d4d4b1 100%);
+
+$night-sky: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+
+$shy-mix: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+
+$dry-red: linear-gradient(to top, #f43b47 0%, #94473a 100%);
+
+$orange-juice: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+
+$fruit-blend: linear-gradient(to right, #f9d423 0%, #ff4e50 100%);
+
+$purple-division: linear-gradient(to top, #7028e4 0%, #e5b2ca 100%);
+
+$lovely-dream: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+
+$slick-carbon: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%),
+linear-gradient(to top, rgba(255, 255, 255, 0.40) 0%, rgba(0, 0, 0, 0.25) 200%);
+
+.slick-carbon {
+    background-blend-mode: multiply;
+}
+
+$premium-dark: linear-gradient(to right, #434343 0%, #000000 100%);
