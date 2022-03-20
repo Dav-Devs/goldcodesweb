@@ -73,7 +73,12 @@ $yescache = md5(microtime(true));
                     </div>
                 </div> --}}
 
-                @yield('content')
+                {{-- @yield('content') --}}
+
+                @isset($main)
+                  {{ $main }}
+                @endif
+
             </main>
         </div>
 
@@ -97,7 +102,7 @@ $yescache = md5(microtime(true));
                 const beamsClient = new PusherPushNotifications.Client({
                 instanceId: 'f37d8b9f-5819-4083-a87d-e5da49f6f6c7',
                 });
-                
+
                 beamsClient.start()
                 .then(() => beamsClient.addDeviceInterest('hello'))
                 .then(() => console.log('Initialization success'))

@@ -1,12 +1,17 @@
 @section('title') Sign Up @endsection
 
 @section('extra_stylesheet')
-<style>
+  <style>
     /* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"); */
 
     * {
         margin: 0;
         padding: 0;
+    }
+
+    hr {
+      height: 2px !important;
+      border-radius: 50% !important;
     }
 
     .container {
@@ -41,7 +46,7 @@
 
     .parent {
         margin-top: 20px;
-        margin-bottom: 50px;
+        margin-bottom: 5px;
     }
 
     .card .top-div {
@@ -51,7 +56,7 @@
     }
 
     .top-div img {
-        width: 20px;
+        width: 40px;
         margin-right: 7px;
     }
 
@@ -190,83 +195,31 @@
     .launch {
         margin-top: 75px;
     }
-
-    .check_circle {
-        stroke-dasharray: 166;
-        stroke-dashoffset: 166;
-        stroke-width: 2;
-        stroke-miterlimit: 10;
-        stroke: #ffd700;
-        fill: none;
-        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-    }
-
-    .checkmark {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        display: block;
-        stroke-width: 2;
-        stroke: #fff;
-        stroke-miterlimit: 10;
-        margin: 10% auto;
-        box-shadow: inset 0px 0px 0px #7ac142;
-        animation: fill 0.4s ease-in-out 0.4s forwards,
-            scale 0.3s ease-in-out 0.9s both;
-    }
-
-    .check_tick {
-        transform-origin: 50% 50%;
-        stroke-dasharray: 48;
-        stroke-dashoffset: 48;
-        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-    }
-
-    @keyframes stroke {
-        100% {
-            stroke-dashoffset: 0;
-        }
-    }
-
-    @keyframes scale {
-
-        0%,
-        100% {
-            transform: none;
-        }
-
-        50% {
-            transform: scale3d(1.1, 1.1, 1);
-        }
-    }
-
-    @keyframes fill {
-        100% {
-            box-shadow: inset 0px 0px 0px 30px #7ac142;
-        }
-    }
-
-</style>
-
+  </style>
 @endsection
 
 @section('extra_script')
 @endsection
 
-<div class="container">
-    <div class="card">
-        <div class="parent">
-            <div class="top-div">
-                <img src="{{ asset('images/svg/GCW-48x48.svg') }}" />
-                <h3>{{ str_replace('_', ' ', config('app.name', 'Gold_Codes_Web')) }}</h3>
-            </div>
-        </div>
-        <form>
-            <div class="main active">
+@slot('main')
+  <div class="container">
+      <div class="card">
+          <div class="parent">
+              <div class="top-div">
+                  <img src="{{ asset('images/svg/GCW-48x48.svg') }}" />
+                  <h3>{{ str_replace('_', ' ', config('app.name', 'Gold_Codes_Web')) }}</h3>
+              </div>
+          </div>
+
+          <hr class="opacity-25">
+
+          <div class="main active">
                 <div class="content">
                     <h4>Sign Up</h4>
-                    <p>You can always change them later.</p>
+                    <p>{{ $pages[$current_page]['sub_heading'] }}</p>
                 </div>
+
+              @if ($current_page === 1)
 
                 <div class="input-text form-floating">
                     <input id="name" type="text"
@@ -300,19 +253,16 @@
                     <button class="nc">Next</button>
                 </div>
 
+              @elseif ($current_page === 'finish')
+                <div class="content">
+                    <h2>Congratulations! <span id="shown_name">User123</span></h2>
+                    <p>You can start using the site or <a href="{{ url('/dashboard/#contribute') }}" target="_blank"
+                            rel="noopener noreferrer">Contribute to Project G.C.W.</a> </p>
+                </div>
+                <div class="button launch"><button>{{ __('Go to the dashboard') }}</button></div>
+              @endif
             </div>
-        </form>
-        <div class="main">
-            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
-                <circle class="check_circle" cx="26" cy="26" r="25" fill="none" />
-                <path class="check_tick" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
-            </svg>
-            <div class="content">
-                <h2>Congratulations! <span id="shown_name">User123</span></h2>
-                <p>You can start using the site or <a href="http://" target="_blank"
-                        rel="noopener noreferrer">Contribute to Project G.C.W.</a> </p>
-            </div>
-            <div class="button launch"><button>{{ __('Go to the dashboard') }}</button></div>
-        </div>
-    </div>
-</div>
+            
+      </div>
+  </div>
+@endslot

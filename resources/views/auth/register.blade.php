@@ -194,60 +194,60 @@
         margin-top: 75px;
     }
 
-    .check_circle {
-        stroke-dasharray: 166;
-        stroke-dashoffset: 166;
-        stroke-width: 2;
-        stroke-miterlimit: 10;
-        stroke: #ffd700;
-        fill: none;
-        animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
-    }
-
-    .checkmark {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        display: block;
-        stroke-width: 2;
-        stroke: #fff;
-        stroke-miterlimit: 10;
-        margin: 10% auto;
-        box-shadow: inset 0px 0px 0px #7ac142;
-        animation: fill 0.4s ease-in-out 0.4s forwards,
-            scale 0.3s ease-in-out 0.9s both;
-    }
-
-    .check_tick {
-        transform-origin: 50% 50%;
-        stroke-dasharray: 48;
-        stroke-dashoffset: 48;
-        animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
-    }
-
-    @keyframes stroke {
-        100% {
-            stroke-dashoffset: 0;
-        }
-    }
-
-    @keyframes scale {
-
-        0%,
-        100% {
-            transform: none;
+        .check_circle {
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+            stroke: #ffd700;
+            fill: none;
+            animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
         }
 
-        50% {
-            transform: scale3d(1.1, 1.1, 1);
+        .checkmark {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: block;
+            stroke-width: 2;
+            stroke: #fff;
+            stroke-miterlimit: 10;
+            margin: 10% auto;
+            box-shadow: inset 0px 0px 0px #7ac142;
+            animation: fill 0.4s ease-in-out 0.4s forwards,
+                scale 0.3s ease-in-out 0.9s both;
         }
-    }
 
-    @keyframes fill {
-        100% {
-            box-shadow: inset 0px 0px 0px 30px #7ac142;
+        .check_tick {
+            transform-origin: 50% 50%;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
         }
-    }
+
+        @keyframes stroke {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes scale {
+
+            0%,
+            100% {
+                transform: none;
+            }
+
+            50% {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+
+        @keyframes fill {
+            100% {
+                box-shadow: inset 0px 0px 0px 30px #7ac142;
+            }
+        }
 
 </style>
 
@@ -331,8 +331,8 @@
         var validate_form=document.querySelectorAll(".main.active input");
         validate_form.forEach(function(val){
         //   val.classList.remove('.was-validated');
-        //   
-          
+        //
+
           if(val.hasAttribute('required')){
             if(!val.checkValidity()){
                 event.preventDefault()
@@ -341,7 +341,7 @@
                 validate=false;
                 val.classList.remove('.valid');
                 val.classList.add('.invalid');
-              
+
             } else {
                 val.classList.remove('.invalid');
                 val.classList.add('.valid');
@@ -399,7 +399,7 @@
                 <div class="button">
                     <button class="nc">Next</button>
                 </div>
-                
+
             </div>
         </form>
         <div class="main">
@@ -451,5 +451,5 @@
                     <button class="bc">Back</button>
                     <button class="fc">Finish</button>
                 </div>
-            </div> 
+            </div>
 --}}

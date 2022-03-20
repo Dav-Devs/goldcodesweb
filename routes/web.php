@@ -5,6 +5,9 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\RedirectController;
 
+use App\Http\Livewire\Register;
+use App\Http\Livewire\LogIn;
+
 use App\Http\Controllers\Auth\LoginController;
 
 use Illuminate\Support\Facades\Route;
@@ -31,11 +34,11 @@ use Illuminate\Http\Response;
 
 Route::get('/', [PagesController::class, 'index'])->name('root');
 
-Route::get('/auth/login/',  LogIn::class)->middleware('auth')->name('login');
+Route::get('/auth/login/',  LogIn::class)->name('login');
 
 Route::post('/auth/logout/', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/auth/signup/', Register::class)->middleware('auth')->name('register');
+Route::get('/auth/signup/', Register::class)->name('register');
 
 Route::resource('/blog/', PostsController::class);
 
