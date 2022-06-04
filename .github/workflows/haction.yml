@@ -2,7 +2,7 @@ name: Heroku Awake
 
 on:
   schedule:
-    - cron: "*/240"
+    - cron: "*/60 * * * *"
 
 jobs:
   build:
